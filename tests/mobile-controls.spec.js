@@ -58,17 +58,11 @@ test.describe('Mobile Controls', () => {
     // Get the right button
     const rightButton = page.locator('.direction-btn[data-direction="right"]');
 
-    // Test touch events work without errors
-    await rightButton.dispatchEvent('touchstart', {
-      touches: [{ clientX: 100, clientY: 100 }]
-    });
-
-    await rightButton.dispatchEvent('touchend', {
-      touches: []
-    });
+    // Simple tap test instead of complex touch events
+    await rightButton.tap();
     
-    // If we get here without errors, touch events are working
-    expect(true).toBe(true);
+    // Verify button is still functional
+    await expect(rightButton).toBeVisible();
   });
 
   test('switch button should be clickable on mobile', async ({ page, isMobile }) => {

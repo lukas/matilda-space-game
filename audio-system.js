@@ -54,8 +54,12 @@ class MobileAudioSystem {
         if (!this.audioManifest) return null;
         
         // Clean text the same way as in the extraction script
-        const cleanText = text.replace(/[🚀👨‍🚀👩‍🚀🐕‍🦺🧊😢💖👨‍🍳👩‍🍳🥕🥬🌽🍅🥒🥔🌙🏠🚪😋🎉🎆✨🎈❤️🌉🏙️🗽🏢🏬🏘️🏡🚋🤵👰]/g, '')
-                          .replace(/^(George|Matilda|Moon Dog|Narrator):\s*/i, '')
+        const cleanText = text.replace(/[🚀👨‍🚀👩‍🚀🐕‍🦺🧊😢💖👨‍🍳👩‍🍳🥕🥬🌽🍅🥒🥔🌙🏠🚪😋🎉🎆✨🎈❤️🌉🏙️🗽🏢🏬🏘️🏡🚋🤵👰🌅]/g, '')
+                          .trim()
+                          .replace(/^George:\s*/i, '')
+                          .replace(/^Matilda:\s*/i, '') 
+                          .replace(/^Moon\s*Dog:\s*/i, '')
+                          .replace(/^Narrator:\s*/i, '')
                           .trim();
         
         console.log(`🔍 Looking for audio: character="${character}", text="${text}"`);

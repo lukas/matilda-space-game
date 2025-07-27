@@ -1197,13 +1197,13 @@ class MoonVegetableGame {
         dialogueBox.style.color = 'white';
         await this.speak(emptyText, 'narrator');
         
-        await new Promise(resolve => setTimeout(resolve, 500)); // Brief pause
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Pause
         
         const moondogText = "🐕‍🦺 Moon Dog: I'm so sorry! I haven't been to the garden in days...";
         dialogueBox.textContent = moondogText;
         await this.speak(moondogText, 'moondog');
         
-        await new Promise(resolve => setTimeout(resolve, 500)); // Brief pause
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Pause
         
         const matildaText = "👩‍🚀 Matilda: Don't worry! Let's go to your vegetable garden and pick some fresh food!";
         dialogueBox.textContent = matildaText;

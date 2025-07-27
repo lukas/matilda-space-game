@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2025-07-27 14:37:03",
-  "total_files": 111,
+  "generated_at": "2025-07-27 14:58:19",
+  "total_files": 120,
   "voice_mappings": {
     "narrator": "pNInz6obpgDQGcFmaJgB",
     "george": "VR6AewLTigWG4xSOukaG",
@@ -785,6 +785,69 @@
       "filename": "george_2ae35119.mp3",
       "text": "👨‍🚀 George: Great idea! Let's help our friend Moon Dog!",
       "clean_text": "Great idea! Let's help our friend Moon Dog!"
+    },
+    {
+      "id": "c1b6ebcf",
+      "character": "narrator",
+      "filename": "narrator_c1b6ebcf.mp3",
+      "text": "😢 Oh no! The refrigerator is completely empty!",
+      "clean_text": "😢 Oh no! The refrigerator is completely empty!"
+    },
+    {
+      "id": "3d7b250b",
+      "character": "moondog",
+      "filename": "moondog_3d7b250b.mp3",
+      "text": "🐕‍🦺 Moon Dog: I'm so sorry! I haven't been to the garden in days...",
+      "clean_text": "🐕‍🦺 Moon Dog: I'm so sorry! I haven't been to the garden in days..."
+    },
+    {
+      "id": "7803eb4b",
+      "character": "matilda",
+      "filename": "matilda_7803eb4b.mp3",
+      "text": "👩‍🚀 Matilda: Don't worry! Let's go to your vegetable garden and pick some fresh food!",
+      "clean_text": "👩‍🚀 Matilda: Don't worry! Let's go to your vegetable garden and pick some fresh food!"
+    },
+    {
+      "id": "c1b6ebcf",
+      "character": "narrator",
+      "filename": "narrator_c1b6ebcf.mp3",
+      "text": "😢 Oh no! The refrigerator is completely empty!",
+      "clean_text": "Oh no! The refrigerator is completely empty!"
+    },
+    {
+      "id": "3d7b250b",
+      "character": "moondog",
+      "filename": "moondog_3d7b250b.mp3",
+      "text": "🐕‍🦺 Moon Dog: I'm so sorry! I haven't been to the garden in days...",
+      "clean_text": "I'm so sorry! I haven't been to the garden in days..."
+    },
+    {
+      "id": "7803eb4b",
+      "character": "matilda",
+      "filename": "matilda_7803eb4b.mp3",
+      "text": "👩‍🚀 Matilda: Don't worry! Let's go to your vegetable garden and pick some fresh food!",
+      "clean_text": "Don't worry! Let's go to your vegetable garden and pick some fresh food!"
+    },
+    {
+      "id": "c1b6ebcf",
+      "character": "narrator",
+      "filename": "narrator_c1b6ebcf.mp3",
+      "text": "😢 Oh no! The refrigerator is completely empty!",
+      "clean_text": "Oh no! The refrigerator is completely empty!"
+    },
+    {
+      "id": "3d7b250b",
+      "character": "moondog",
+      "filename": "moondog_3d7b250b.mp3",
+      "text": "🐕‍🦺 Moon Dog: I'm so sorry! I haven't been to the garden in days...",
+      "clean_text": "I'm so sorry! I haven't been to the garden in days..."
+    },
+    {
+      "id": "7803eb4b",
+      "character": "matilda",
+      "filename": "matilda_7803eb4b.mp3",
+      "text": "👩‍🚀 Matilda: Don't worry! Let's go to your vegetable garden and pick some fresh food!",
+      "clean_text": "Don't worry! Let's go to your vegetable garden and pick some fresh food!"
     }
   ]
 }

@@ -18,14 +18,11 @@ test.describe('Basic Game Functionality', () => {
     await expect(gameArea).toBeVisible();
   });
 
-  test('characters should exist in DOM', async ({ page }) => {
+  test('start button text should be correct', async ({ page }) => {
     await page.goto('/');
     
-    // Characters should exist in DOM (they're in the HTML)
-    const george = page.locator('#george');
-    const matilda = page.locator('#matilda');
-    
-    await expect(george).toBeAttached();
-    await expect(matilda).toBeAttached();
+    // More specific test - check button text after page loads
+    const startButton = page.locator('#startBtn');
+    await expect(startButton).toHaveText('Start Space Journey!');
   });
 });
