@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2025-07-27 10:40:37",
-  "total_files": 99,
+  "generated_at": "2025-07-27 10:49:44",
+  "total_files": 110,
   "voice_mappings": {
     "narrator": "pNInz6obpgDQGcFmaJgB",
     "george": "VR6AewLTigWG4xSOukaG",
@@ -701,6 +701,83 @@
       "filename": "matilda_24e8d82a.mp3",
       "text": "Matilda chopped a 🥔!",
       "clean_text": "Matilda chopped a !"
+    },
+    {
+      "id": "1e523fbd",
+      "character": "moondog",
+      "filename": "moondog_1e523fbd.mp3",
+      "text": "🐕‍🦺 Moon Dog: Woof! George and Matilda! Welcome to my moon house!",
+      "clean_text": "Moon Dog: Woof! George and Matilda! Welcome to my moon house!"
+    },
+    {
+      "id": "72fdd034",
+      "character": "matilda",
+      "filename": "matilda_72fdd034.mp3",
+      "text": "👩‍🚀 Matilda: Your house looks amazing! We brought our appetites!",
+      "clean_text": "Matilda: Your house looks amazing! We brought our appetites!"
+    },
+    {
+      "id": "1d329a7e",
+      "character": "moondog",
+      "filename": "moondog_1d329a7e.mp3",
+      "text": "🐕‍🦺 Moon Dog: Wow! You two are amazing! Thank you so much!",
+      "clean_text": "Moon Dog: Wow! You two are amazing! Thank you so much!"
+    },
+    {
+      "id": "8a5c0493",
+      "character": "matilda",
+      "filename": "matilda_8a5c0493.mp3",
+      "text": "👩‍🚀 Matilda: Walk close to the refrigerator to start cooking!",
+      "clean_text": "Matilda: Walk close to the refrigerator to start cooking!"
+    },
+    {
+      "id": "aae08e4b",
+      "character": "george",
+      "filename": "george_aae08e4b.mp3",
+      "text": "👨‍🚀 George: Hi Moon Dog! We're so happy to visit you!",
+      "clean_text": "George: Hi Moon Dog! We're so happy to visit you!"
+    },
+    {
+      "id": "3b8ac9c6",
+      "character": "moondog",
+      "filename": "moondog_3b8ac9c6.mp3",
+      "text": "🐕‍🦺 Moon Dog: Oh no... I'm so embarrassed. I don't have any food to offer you...",
+      "clean_text": "Moon Dog: Oh no... I'm so embarrassed. I don't have any food to offer you..."
+    },
+    {
+      "id": "fb09bc82",
+      "character": "george",
+      "filename": "george_fb09bc82.mp3",
+      "text": "👨‍🚀 George: Don't worry! Maybe we can help somehow?",
+      "clean_text": "George: Don't worry! Maybe we can help somehow?"
+    },
+    {
+      "id": "1a7081e3",
+      "character": "matilda",
+      "filename": "matilda_1a7081e3.mp3",
+      "text": "👩‍🚀 Matilda: Let's check your refrigerator! Walk close to it to see what's inside.",
+      "clean_text": "Matilda: Let's check your refrigerator! Walk close to it to see what's inside."
+    },
+    {
+      "id": "01804f41",
+      "character": "george",
+      "filename": "george_01804f41.mp3",
+      "text": "👨‍🚀 George: We're back, Moon Dog! Look at all the vegetables we found!",
+      "clean_text": "George: We're back, Moon Dog! Look at all the vegetables we found!"
+    },
+    {
+      "id": "a7e290b6",
+      "character": "matilda",
+      "filename": "matilda_a7e290b6.mp3",
+      "text": "👩‍🚀 Matilda: We collected 6 fresh vegetables for you!",
+      "clean_text": "Matilda: We collected 6 fresh vegetables for you!"
+    },
+    {
+      "id": "b188107a",
+      "character": "george",
+      "filename": "george_b188107a.mp3",
+      "text": "👨‍🚀 George: Let's put them in your refrigerator and cook a delicious dinner!",
+      "clean_text": "George: Let's put them in your refrigerator and cook a delicious dinner!"
     }
   ]
 }
