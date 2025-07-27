@@ -55,38 +55,13 @@ class MoonVegetableGame {
         
         this.createPickupSound();
         this.initSpaceFlight();
-        this.initMuteButton();
+        this.initAudioSettings();
         this.initMobileControls();
     }
     
-    initMuteButton() {
+    initAudioSettings() {
+        // Audio is always enabled - no mute functionality
         this.speechMuted = false;
-        const muteBtn = document.getElementById('muteBtn');
-        if (muteBtn) {
-            muteBtn.addEventListener('click', () => this.toggleSpeech());
-        }
-    }
-    
-    toggleSpeech() {
-        this.speechMuted = !this.speechMuted;
-        const muteBtn = document.getElementById('muteBtn');
-        
-        if (this.speechMuted) {
-            muteBtn.textContent = '🔇 Sound Off';
-            muteBtn.style.background = '#999';
-            if (this.speechSynthesis) {
-                this.speechSynthesis.cancel();
-            }
-            if (this.mobileAudio) {
-                this.mobileAudio.setEnabled(false);
-            }
-        } else {
-            muteBtn.textContent = '🔊 Sound On';
-            muteBtn.style.background = '#666';
-            if (this.mobileAudio) {
-                this.mobileAudio.setEnabled(true);
-            }
-        }
     }
     
     initMobileControls() {
@@ -228,12 +203,9 @@ class MoonVegetableGame {
     }
     
     speak(text, character = 'narrator') {
-        console.log(`🎮 Game speak() called - muted: ${this.speechMuted}, text: "${text.substring(0, 30)}..."`);
+        console.log(`🎮 Game speak() called - text: "${text.substring(0, 30)}..."`);
         
-        if (this.speechMuted) {
-            console.log('🔇 Speech is muted, skipping');
-            return Promise.resolve();
-        }
+        // Audio is always enabled
         
         // Try mobile audio system first on mobile devices
         if (this.mobileAudio && this.mobileAudio.isMobile) {

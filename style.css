@@ -257,24 +257,7 @@ h1 {
     z-index: 10;
 }
 
-/* Button styling updates */
-.button-row {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-#muteBtn {
-    padding: 10px 20px;
-    background: #666;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1em;
-}
+/* Button styling updates - removed mute button */
 
 /* Mobile Touch Controls */
 .mobile-controls {
@@ -415,14 +398,10 @@ h1 {
         margin-bottom: 10px;
     }
     
-    #startBtn, #muteBtn {
+    #startBtn {
         padding: 12px 24px;
         font-size: 1em;
         margin: 5px;
-    }
-    
-    .button-row {
-        gap: 10px;
     }
 }
 
@@ -539,7 +518,7 @@ h1 {
         padding: 10px;
     }
     
-    #startBtn, #muteBtn {
+    #startBtn {
         min-height: 48px;
         min-width: 48px;
     }
