@@ -8,6 +8,7 @@ class MobileAudioSystem {
         this.audioManifest = null;
         this.isMobile = this.detectMobile();
         this.audioEnabled = true;
+        this.audioUnlocked = false;
         this.loadAudioManifest();
     }
     
@@ -88,8 +89,29 @@ class MobileAudioSystem {
         });
     }
     
+    async unlockAudio() {
+        if (this.audioUnlocked) return;
+        
+        try {
+            // Create a silent audio to unlock the audio context
+            const silentAudio = new Audio();
+            silentAudio.src = 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSRxx+/e';
+            
+            await silentAudio.play();
+            this.audioUnlocked = true;
+            console.log('🔓 Audio context unlocked for mobile');
+        } catch (error) {
+            console.warn('⚠️ Failed to unlock audio context:', error);
+        }
+    }
+
     async playAudio(audioPath) {
         try {
+            // Ensure audio is unlocked
+            if (!this.audioUnlocked) {
+                await this.unlockAudio();
+            }
+            
             const audio = await this.preloadAudio(audioPath);
             
             // Stop current audio

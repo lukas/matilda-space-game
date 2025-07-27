@@ -45,6 +45,14 @@ class MoonVegetableGame {
     init() {
         this.startBtn.addEventListener('click', () => this.startSpaceFlight());
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+        
+        // Add click listener to unlock audio on any user interaction
+        this.gameArea.addEventListener('click', () => {
+            if (this.mobileAudio && this.mobileAudio.isMobile && !this.mobileAudio.audioUnlocked) {
+                this.mobileAudio.unlockAudio();
+            }
+        });
+        
         this.createPickupSound();
         this.initSpaceFlight();
         this.initMuteButton();
@@ -440,6 +448,11 @@ class MoonVegetableGame {
             // Reset all game variables for a fresh start
             if (this.gameState === 'completed') {
                 this.resetGameState();
+            }
+            
+            // Unlock audio context for mobile when user interacts
+            if (this.mobileAudio && this.mobileAudio.isMobile) {
+                this.mobileAudio.unlockAudio();
             }
             
             this.gameRunning = true;
