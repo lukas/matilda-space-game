@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Try to Pick Vegetables - George and Matilda's Moon Adventure</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>🚀 Try to Pick Vegetables 🥕</h1>
+        <h1>Matilda and George's moon adventure</h1>
         <div class="score">Score: <span id="score">0</span></div>
         
         <div class="game-area" id="gameArea">
@@ -22,8 +22,24 @@
         </div>
         
         <div class="controls">
-            <p>Use arrow keys to move George and Matilda around the moon!</p>
-            <button id="startBtn">Start Game</button>
+            <p id="instructions">Get ready for an amazing adventure with George and Matilda!</p>
+            <div class="button-row">
+                <button id="startBtn">Start Game</button>
+                <button id="muteBtn">🔊 Sound On</button>
+            </div>
+        </div>
+        
+        <!-- Mobile Touch Controls -->
+        <div class="mobile-controls" id="mobileControls" style="display: none;">
+            <div class="d-pad">
+                <button class="direction-btn up" data-direction="up">⬆️</button>
+                <div class="middle-row">
+                    <button class="direction-btn left" data-direction="left">⬅️</button>
+                    <button class="switch-btn" id="switchBtn">🔄</button>
+                    <button class="direction-btn right" data-direction="right">➡️</button>
+                </div>
+                <button class="direction-btn down" data-direction="down">⬇️</button>
+            </div>
         </div>
     </div>
     

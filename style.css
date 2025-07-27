@@ -150,3 +150,382 @@ h1 {
         opacity: 0;
     }
 }
+
+/* Space Flight Styles */
+.spaceship {
+    position: absolute;
+    font-size: 4em;
+    z-index: 20;
+    transition: all 0.1s ease;
+    filter: drop-shadow(0 0 10px #ffaa00);
+}
+
+.space-star {
+    position: absolute;
+    color: white;
+    animation: twinkle 3s infinite;
+    z-index: 1;
+}
+
+.planet {
+    position: absolute;
+    z-index: 5;
+    filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
+}
+
+.asteroid {
+    position: absolute;
+    z-index: 10;
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spaceScroll {
+    from { transform: translateX(0px); }
+    to { transform: translateX(-820px); }
+}
+
+/* House Interior Styles */
+.house-interior {
+    background: linear-gradient(to bottom, #8B4513 0%, #D2691E 100%);
+}
+
+.house-floor {
+    background: #654321;
+    border-top: 3px solid #8B4513;
+}
+
+.character-house {
+    position: absolute;
+    font-size: 3em;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.character-house:hover {
+    transform: scale(1.1);
+}
+
+.refrigerator {
+    transition: all 0.3s ease;
+}
+
+.refrigerator:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.dialogue-box {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Walking scene styles */
+.moon-surface-scene {
+    background: linear-gradient(to bottom, #000022 0%, #220044 50%, #444 100%);
+}
+
+.moon-ground {
+    background: #888;
+    border-radius: 0 0 50px 50px;
+}
+
+.crater {
+    background: #666;
+    border-radius: 50%;
+    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
+}
+
+.moon-house {
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.3));
+    transition: transform 0.3s ease;
+}
+
+.moon-house:hover {
+    transform: scale(1.05);
+}
+
+.house-door {
+    z-index: 10;
+}
+
+/* Button styling updates */
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#muteBtn {
+    padding: 10px 20px;
+    background: #666;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+/* Mobile Touch Controls */
+.mobile-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.d-pad {
+    display: grid;
+    grid-template-rows: 60px 60px 60px;
+    grid-template-columns: 60px 60px 60px;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+}
+
+.direction-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.direction-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(45deg, #45b7d1, #4ecdc4);
+}
+
+.switch-btn {
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: all 0.2s ease;
+    touch-action: manipulation;
+    user-select: none;
+}
+
+.switch-btn:active {
+    transform: scale(0.95);
+    background: linear-gradient(45deg, #ffa500, #ff6b6b);
+}
+
+.middle-row {
+    display: contents;
+}
+
+.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.switch-btn {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* Mobile Responsive Design */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+        overflow-x: hidden;
+    }
+    
+    .game-container {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    .score {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    
+    .game-area {
+        width: calc(100vw - 20px);
+        max-width: 400px;
+        height: calc((100vw - 20px) * 0.75);
+        max-height: 500px;
+        border-width: 2px;
+    }
+    
+    .character {
+        font-size: 2em;
+    }
+    
+    .vegetable {
+        font-size: 1.5em;
+    }
+    
+    .controls p {
+        font-size: 1em;
+        margin-bottom: 10px;
+    }
+    
+    #startBtn, #muteBtn {
+        padding: 12px 24px;
+        font-size: 1em;
+        margin: 5px;
+    }
+    
+    .button-row {
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .game-area {
+        width: calc(100vw - 16px);
+        height: calc((100vw - 16px) * 0.8);
+        max-height: 400px;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .character {
+        font-size: 1.8em;
+    }
+    
+    .mobile-controls {
+        bottom: 10px;
+        padding: 15px;
+    }
+    
+    .direction-btn, .switch-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2em;
+    }
+    
+    .d-pad {
+        grid-template-rows: 50px 50px 50px;
+        grid-template-columns: 50px 50px 50px;
+        gap: 8px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    body {
+        padding: 5px;
+    }
+    
+    h1 {
+        font-size: 1.2em;
+        margin-bottom: 5px;
+    }
+    
+    .score {
+        font-size: 1em;
+        margin-bottom: 5px;
+    }
+    
+    .game-area {
+        height: calc(100vh - 120px);
+        max-height: 300px;
+    }
+    
+    .mobile-controls {
+        bottom: 5px;
+        padding: 10px;
+    }
+    
+    .direction-btn, .switch-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1em;
+    }
+    
+    .d-pad {
+        grid-template-rows: 45px 45px 45px;
+        grid-template-columns: 45px 45px 45px;
+        gap: 5px;
+    }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+    .vegetable:hover {
+        transform: none;
+    }
+    
+    .character-house:hover {
+        transform: none;
+    }
+    
+    .refrigerator:hover {
+        transform: none;
+        filter: none;
+    }
+    
+    .moon-house:hover {
+        transform: none;
+    }
+    
+    #startBtn:hover {
+        transform: none;
+    }
+    
+    /* Larger touch targets */
+    .vegetable {
+        font-size: 2.2em;
+        padding: 10px;
+    }
+    
+    #startBtn, #muteBtn {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
