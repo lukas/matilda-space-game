@@ -24,6 +24,9 @@ class MobileAudioSystem {
             if (response.ok) {
                 this.audioManifest = await response.json();
                 console.log(`🎵 Loaded audio manifest with ${this.audioManifest.total_files} files`);
+                
+                // Start preloading critical audio files immediately
+                this.preloadCriticalAudio();
             } else {
                 console.warn('⚠️  Audio manifest not found, falling back to text-to-speech');
                 this.audioManifest = null;
@@ -31,6 +34,34 @@ class MobileAudioSystem {
         } catch (error) {
             console.warn('⚠️  Failed to load audio manifest:', error);
             this.audioManifest = null;
+        }
+    }
+    
+    async preloadCriticalAudio() {
+        if (!this.audioManifest) return;
+        
+        // Critical dialogue that must work for game flow
+        const criticalTexts = [
+            { text: "😢 Oh no! The refrigerator is completely empty!", character: "narrator" },
+            { text: "🐕‍🦺 Moon Dog: I'm so sorry! I haven't been to the garden in days...", character: "moondog" },
+            { text: "👩‍🚀 Matilda: Don't worry! Let's go to your vegetable garden and pick some fresh food!", character: "matilda" },
+            { text: "👨‍🚀 George: Great idea! Let's help our friend Moon Dog!", character: "george" }
+        ];
+        
+        console.log('🎵 Preloading critical audio files...');
+        
+        for (const item of criticalTexts) {
+            try {
+                const audioPath = await this.getAudioFile(item.text, item.character);
+                if (audioPath) {
+                    // Start preloading but don't wait for completion
+                    this.preloadAudio(audioPath).catch(error => {
+                        console.warn(`⚠️ Failed to preload critical audio: ${audioPath}`, error);
+                    });
+                }
+            } catch (error) {
+                console.warn(`⚠️ Error preloading critical audio for ${item.character}:`, error);
+            }
         }
     }
     
@@ -145,15 +176,39 @@ class MobileAudioSystem {
         
         return new Promise((resolve, reject) => {
             const audio = new Audio();
+            let hasResolved = false;
+            
+            // Add timeout to prevent infinite hanging
+            const timeout = setTimeout(() => {
+                if (!hasResolved) {
+                    hasResolved = true;
+                    console.warn(`⏰ Audio loading timeout: ${audioPath}`);
+                    reject(new Error(`Audio loading timeout: ${audioPath}`));
+                }
+            }, 10000); // 10 second timeout
             
             audio.addEventListener('canplaythrough', () => {
-                this.audioCache.set(audioPath, audio);
-                resolve(audio);
+                if (!hasResolved) {
+                    hasResolved = true;
+                    clearTimeout(timeout);
+                    this.audioCache.set(audioPath, audio);
+                    console.log(`✅ Audio preloaded successfully: ${audioPath}`);
+                    resolve(audio);
+                }
             });
             
             audio.addEventListener('error', (error) => {
-                console.warn(`⚠️ Failed to load audio: ${audioPath}`, error);
-                reject(error);
+                if (!hasResolved) {
+                    hasResolved = true;
+                    clearTimeout(timeout);
+                    console.warn(`⚠️ Failed to load audio: ${audioPath}`, error);
+                    reject(error);
+                }
+            });
+            
+            // Add loadstart event to detect loading begins
+            audio.addEventListener('loadstart', () => {
+                console.log(`📥 Started loading audio: ${audioPath}`);
             });
             
             audio.src = audioPath;
@@ -235,7 +290,13 @@ class MobileAudioSystem {
             }
             
             console.log(`🎵 Preloading audio: ${audioPath}`);
-            const audio = await this.preloadAudio(audioPath);
+            let audio;
+            try {
+                audio = await this.preloadAudio(audioPath);
+            } catch (preloadError) {
+                console.warn(`⚠️ Audio preload failed for ${audioPath}, continuing without audio:`, preloadError);
+                return Promise.resolve(); // Continue game even if audio fails
+            }
             
             // Stop current audio
             if (this.currentAudio && !this.currentAudio.paused) {
@@ -293,6 +354,21 @@ class MobileAudioSystem {
             return Promise.resolve();
         }
         
+        // Add timeout to prevent hanging - critical for game flow
+        const timeout = new Promise((resolve) => {
+            setTimeout(() => {
+                console.warn(`⏰ Speech timeout for: ${text.substring(0, 30)}...`);
+                resolve();
+            }, 15000); // 15 second maximum per dialogue
+        });
+        
+        const speechPromise = this.speakInternal(text, character);
+        
+        // Race between actual speech and timeout
+        return Promise.race([speechPromise, timeout]);
+    }
+    
+    async speakInternal(text, character) {
         // Use ElevenLabs audio files on ALL platforms when available
         if (this.audioManifest && this.useElevenLabsEverywhere) {
             console.log('🎵 Looking for ElevenLabs audio file...');
