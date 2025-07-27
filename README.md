@@ -41,17 +41,22 @@ An interactive space adventure game where George and Matilda travel to the moon,
 
 ## 🎵 Audio
 
-- Text-to-speech narration for all characters
-- Mute/unmute button available
-- Character-specific voices for George, Matilda, Moon Dog, and narrator
+- **ElevenLabs AI voices** for realistic character dialogue (120+ audio files)
+- **Character-specific voices**: George (Josh), Matilda (Jessica), Moon Dog (Brian), Narrator (Adam)
+- **Clean dialogue**: Automatic emoji and character name removal from spoken text
+- **Fallback system**: Browser text-to-speech if audio files aren't available
+- **Mute controls**: Audio can be toggled on/off
 
 ## 🛠️ Technical Details
 
-- Pure HTML5, CSS3, and JavaScript (ES6+)
-- No external dependencies
-- Responsive design works on desktop browsers
-- Uses CSS animations and transitions for smooth gameplay
-- Async/await pattern for dialogue and scene management
+- **Frontend**: Pure HTML5, CSS3, and JavaScript (ES6+)
+- **No external dependencies** - runs entirely in browser
+- **Cross-platform**: Desktop and mobile browsers supported
+- **Mobile controls**: Touch-based directional pad for smartphones
+- **Audio system**: Dual system supporting both AI-generated and browser TTS
+- **File structure**: `script.js` (3000+ lines), `audio-system.js`, `style.css`
+- **Testing**: Playwright test suite with <3 second execution time
+- **Performance**: CSS animations and async/await for smooth 60fps gameplay
 
 ## 🎪 Game Flow
 
@@ -61,4 +66,26 @@ Each phase includes multiple interactive elements, character dialogue, and beaut
 
 ## 🚀 Getting Started
 
-Simply open `index.html` in any modern web browser and click "Start Game" to begin your moon adventure!
+### For Players
+Simply open `index.html` in any modern web browser and click "Start Space Journey!" to begin your moon adventure!
+
+### For Developers  
+```bash
+# Run tests (must complete in <3 seconds)
+npm test
+
+# Run specific test file
+npm test tests/basic.spec.js
+
+# Syntax check
+node -c script.js
+
+# Start local server for development
+python3 -m http.server 3000
+```
+
+### For LLMs/AI Assistants
+- See `CLAUDE.md` for development guidelines and testing requirements
+- See `llms.txt` for codebase structure and architecture overview
+- Audio files are in `audio/` with manifest at `audio/manifest.json` 
+- Critical files: `script.js` (main game), `audio-system.js` (audio handling), `tests/` (test suite)
