@@ -399,8 +399,10 @@ h1 {
     .game-area {
         width: 800px;
         height: 600px;
-        transform: scale(calc(90vw / 800px));
+        transform: scale(0.44);
+        transform-origin: center;
         border-width: 1px;
+        margin: calc((600px * 0.44 - 600px) / 2) calc((800px * 0.44 - 800px) / 2);
     }
     
     .character {
@@ -433,7 +435,9 @@ h1 {
     }
     
     .game-area {
-        transform: scale(calc(85vw / 800px));
+        transform: scale(0.38);
+        transform-origin: center;
+        margin: calc((600px * 0.38 - 600px) / 2) calc((800px * 0.38 - 800px) / 2);
     }
     
     h1 {
@@ -486,7 +490,9 @@ h1 {
     }
     
     .game-area {
-        transform: scale(calc(95vw / 800px));
+        transform: scale(0.35);
+        transform-origin: center;
+        margin: calc((600px * 0.35 - 600px) / 2) calc((800px * 0.35 - 800px) / 2);
     }
     
     .mobile-controls {
