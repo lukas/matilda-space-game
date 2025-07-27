@@ -439,45 +439,70 @@ h1 {
     }
 }
 
-/* Landscape orientation on mobile */
+/* Landscape orientation on mobile - Full screen with overlay controls */
 @media screen and (max-height: 500px) and (orientation: landscape) {
     body {
-        padding: 2px;
-        overflow-x: hidden;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        height: 100vh;
     }
     
     .game-container {
+        width: 100vw;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
     }
     
     h1 {
-        font-size: 1.2em;
-        margin-bottom: 5px;
+        display: none;
     }
     
     .game-area {
-        transform: scale(0.35);
-        transform-origin: center;
-        margin: calc((600px * 0.35 - 600px) / 2) calc((800px * 0.35 - 800px) / 2);
+        width: 100vw;
+        height: 100vh;
+        transform: none;
+        border: none;
+        border-radius: 0;
+        margin: 0;
+        max-width: none;
+        max-height: none;
     }
     
     .mobile-controls {
-        bottom: 5px;
-        padding: 8px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 2000;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        padding: 10px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .direction-btn, .switch-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 0.8em;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1em;
+        background: rgba(78, 205, 196, 0.8);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .switch-btn {
+        background: rgba(255, 107, 107, 0.8);
     }
     
     .d-pad {
-        grid-template-rows: 28px 28px 28px;
-        grid-template-columns: 28px 28px 28px;
-        gap: 3px;
+        grid-template-rows: 45px 45px 45px;
+        grid-template-columns: 45px 45px 45px;
+        gap: 8px;
     }
 }
 
