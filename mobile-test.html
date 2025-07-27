@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Mobile Layout Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 5px;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000011 0%, #000033 50%, #000055 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 2000;
+            font-size: 12px;
+            font-family: monospace;
+        }
+
+        .game-container {
+            max-width: 100%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .game-area {
+            width: 800px;
+            height: 600px;
+            background: linear-gradient(to bottom, #000022 0%, #220044 100%);
+            border: 3px solid #444;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        /* Test different scaling approaches */
+        .scale-test-1 {
+            transform: scale(0.45);
+            transform-origin: center;
+        }
+
+        .scale-test-2 {
+            transform: scale(0.4);
+            transform-origin: center;
+        }
+
+        .test-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .rocket {
+            position: absolute;
+            top: 200px;
+            left: 350px;
+            font-size: 4em;
+            z-index: 10;
+        }
+
+        .viewport-info {
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Mobile breakpoints */
+        @media screen and (max-width: 480px) {
+            .game-area {
+                transform: scale(0.45);
+                transform-origin: center;
+            }
+        }
+
+        @media screen and (max-width: 375px) {
+            .game-area {
+                transform: scale(0.4);
+                transform-origin: center;
+            }
+        }
+
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            .game-area {
+                transform: scale(0.35);
+                transform-origin: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info" id="debugInfo">
+        Debug info loading...
+    </div>
+
+    <div class="game-container">
+        <h1>Mobile Layout Test</h1>
+        
+        <div class="viewport-info">
+            <div>Screen: <span id="screenSize"></span></div>
+            <div>Viewport: <span id="viewportSize"></span></div>
+            <div>Game Area: <span id="gameAreaSize"></span></div>
+        </div>
+
+        <div class="game-area" id="gameArea">
+            <div class="test-content">
+                Game Area<br>
+                800x600px
+            </div>
+            <div class="rocket">🚀</div>
+        </div>
+    </div>
+
+    <script>
+        function updateDebugInfo() {
+            const gameArea = document.getElementById('gameArea');
+            const rect = gameArea.getBoundingClientRect();
+            const computedStyle = window.getComputedStyle(gameArea);
+            
+            const debugInfo = `
+Screen: ${screen.width}x${screen.height}
+Viewport: ${window.innerWidth}x${window.innerHeight}
+Game Area Position: ${Math.round(rect.left)}, ${Math.round(rect.top)}
+Game Area Size: ${Math.round(rect.width)}x${Math.round(rect.height)}
+Transform: ${computedStyle.transform}
+Margin: ${computedStyle.marginLeft}, ${computedStyle.marginRight}
+Overflow-X: ${document.body.style.overflowX || 'visible'}
+            `.trim();
+            
+            document.getElementById('debugInfo').innerText = debugInfo;
+            
+            // Update display info
+            document.getElementById('screenSize').textContent = `${screen.width}x${screen.height}`;
+            document.getElementById('viewportSize').textContent = `${window.innerWidth}x${window.innerHeight}`;
+            document.getElementById('gameAreaSize').textContent = `${Math.round(rect.left)}px from left, ${Math.round(rect.width)}x${Math.round(rect.height)}`;
+            
+            // Check if game area is off-screen
+            if (rect.left < 0 || rect.right > window.innerWidth) {
+                document.getElementById('gameArea').style.border = '3px solid red';
+                document.querySelector('.test-content').innerHTML = 'OFF-SCREEN!<br>❌ PROBLEM';
+            } else {
+                document.getElementById('gameArea').style.border = '3px solid green';
+                document.querySelector('.test-content').innerHTML = 'CENTERED!<br>✅ GOOD';
+            }
+        }
+
+        // Update debug info on load and resize
+        window.addEventListener('load', updateDebugInfo);
+        window.addEventListener('resize', updateDebugInfo);
+        window.addEventListener('orientationchange', () => {
+            setTimeout(updateDebugInfo, 100);
+        });
+
+        // Initial update
+        updateDebugInfo();
+    </script>
+</body>
+</html>
