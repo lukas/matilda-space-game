@@ -1,5 +1,5 @@
-// Mobile Audio System for Game Speech
-// Uses pre-generated audio files instead of text-to-speech on mobile
+// ElevenLabs Audio System for Game Speech
+// Uses pre-generated ElevenLabs audio files on all platforms
 
 class MobileAudioSystem {
     constructor() {
@@ -9,6 +9,7 @@ class MobileAudioSystem {
         this.isMobile = this.detectMobile();
         this.audioEnabled = true;
         this.audioUnlocked = false;
+        this.useElevenLabsEverywhere = true; // Force ElevenLabs audio on all platforms
         this.loadAudioManifest();
     }
     
@@ -280,7 +281,7 @@ class MobileAudioSystem {
     }
     
     async speak(text, character) {
-        console.log(`🗣️ speak() called - enabled: ${this.audioEnabled}, mobile: ${this.isMobile}, character: ${character}`);
+        console.log(`🗣️ speak() called - enabled: ${this.audioEnabled}, platform: ${this.isMobile ? 'mobile' : 'desktop'}, character: ${character}`);
         console.log(`🗣️ Text: "${text.substring(0, 50)}..."`);
         
         if (!this.audioEnabled) {
@@ -288,20 +289,20 @@ class MobileAudioSystem {
             return Promise.resolve();
         }
         
-        // Try to use audio files on mobile, fall back to text-to-speech
-        if (this.isMobile && this.audioManifest) {
-            console.log('🎵 Mobile detected, looking for audio file...');
+        // Use ElevenLabs audio files on ALL platforms when available
+        if (this.audioManifest && this.useElevenLabsEverywhere) {
+            console.log('🎵 Looking for ElevenLabs audio file...');
             const audioPath = await this.getAudioFile(text, character);
             if (audioPath) {
                 console.log(`🎵 Found audio file: ${audioPath}`);
-                console.log(`🎵 Playing audio: ${character} - ${text.substring(0, 30)}...`);
+                console.log(`🎵 Playing ElevenLabs audio: ${character} - ${text.substring(0, 30)}...`);
                 return this.playAudio(audioPath);
             } else {
-                console.log('⚠️ No audio file found for this text');
+                console.log('⚠️ No ElevenLabs audio file found for this text');
             }
         }
         
-        // Fallback to text-to-speech
+        // Fallback to text-to-speech only if no audio file found
         console.log('🗣️ Falling back to text-to-speech');
         return this.fallbackToTextToSpeech(text, character);
     }

@@ -44,9 +44,9 @@ class MoonVegetableGame {
         this.startBtn.addEventListener('click', () => this.startSpaceFlight());
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
         
-        // Add click listener to unlock audio on any user interaction
+        // Add click listener to unlock audio on any user interaction (all platforms)
         this.gameArea.addEventListener('click', () => {
-            if (this.mobileAudio && this.mobileAudio.isMobile && !this.mobileAudio.audioUnlocked) {
+            if (this.mobileAudio && !this.mobileAudio.audioUnlocked) {
                 this.mobileAudio.unlockAudio();
             }
         });
@@ -54,6 +54,7 @@ class MoonVegetableGame {
         this.createPickupSound();
         this.initSpaceFlight();
         this.initAudioSettings();
+        this.initElevenLabsAudio();
         this.initMobileControls();
     }
     
@@ -142,7 +143,7 @@ class MoonVegetableGame {
         
         // Initialize text-to-speech and mobile audio system
         this.initTextToSpeech();
-        this.initMobileAudio();
+        this.initElevenLabsAudio();
     }
     
     initTextToSpeech() {
@@ -189,13 +190,13 @@ class MoonVegetableGame {
         }
     }
     
-    initMobileAudio() {
-        // Initialize mobile audio system for better mobile speech
+    initElevenLabsAudio() {
+        // Initialize ElevenLabs audio system for all platforms
         if (window.MobileAudioSystem) {
             this.mobileAudio = new window.MobileAudioSystem();
-            console.log('🎵 Mobile audio system initialized');
+            console.log('🎵 ElevenLabs audio system initialized for all platforms');
         } else {
-            console.warn('⚠️ Mobile audio system not available');
+            console.warn('⚠️ ElevenLabs audio system not available');
             this.mobileAudio = null;
         }
     }
@@ -205,15 +206,15 @@ class MoonVegetableGame {
         
         // Audio is always enabled
         
-        // Try mobile audio system first on mobile devices
-        if (this.mobileAudio && this.mobileAudio.isMobile) {
-            console.log('📱 Using mobile audio system');
+        // Try ElevenLabs audio system first (on ALL platforms)
+        if (this.mobileAudio) {
+            console.log('🎵 Using ElevenLabs audio system');
             return this.mobileAudio.speak(text, character);
         }
         
-        console.log('🖥️ Using desktop text-to-speech');
+        console.log('🖥️ Using desktop text-to-speech fallback');
         
-        // Fallback to text-to-speech
+        // Fallback to text-to-speech only if no audio system
         if (!this.speechSynthesis) return Promise.resolve();
         
         // Stop any currently speaking text
@@ -428,8 +429,8 @@ class MoonVegetableGame {
                 this.resetGameState();
             }
             
-            // Unlock audio context for mobile when user interacts
-            if (this.mobileAudio && this.mobileAudio.isMobile) {
+            // Unlock audio context when user interacts (all platforms)
+            if (this.mobileAudio) {
                 this.mobileAudio.unlockAudio();
             }
             
