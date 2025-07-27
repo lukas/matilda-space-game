@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2025-07-27 10:25:04",
-  "total_files": 55,
+  "generated_at": "2025-07-27 10:40:37",
+  "total_files": 99,
   "voice_mappings": {
     "narrator": "pNInz6obpgDQGcFmaJgB",
     "george": "VR6AewLTigWG4xSOukaG",
@@ -393,6 +393,314 @@
       "filename": "matilda_f5136875.mp3",
       "text": "👩‍🚀 Matilda: I can't wait to tell my family about Moon Dog, the vegetable garden, the playground, and all our fun activities!",
       "clean_text": "Matilda: I can't wait to tell my family about Moon Dog, the vegetable garden, the playground, and all our fun activities!"
+    },
+    {
+      "id": "c72c9399",
+      "character": "narrator",
+      "filename": "narrator_c72c9399.mp3",
+      "text": "🚪 Entering Moon Dog's house...",
+      "clean_text": "Entering Moon Dog's house..."
+    },
+    {
+      "id": "2d65466b",
+      "character": "narrator",
+      "filename": "narrator_2d65466b.mp3",
+      "text": "Now let's cook together! First, we need to wash the vegetables at the sink.",
+      "clean_text": "Now let's cook together! First, we need to wash the vegetables at the sink."
+    },
+    {
+      "id": "e80a575b",
+      "character": "narrator",
+      "filename": "narrator_e80a575b.mp3",
+      "text": "🎉 Great job! You've collected 6 vegetables!\nLet's return to Moon Dog's house!",
+      "clean_text": "Great job! You've collected 6 vegetables! Let's return to Moon Dog's house!"
+    },
+    {
+      "id": "cbba04a3",
+      "character": "narrator",
+      "filename": "narrator_cbba04a3.mp3",
+      "text": "Good morning! It's day 1 of your adventure! What would you like to do today?",
+      "clean_text": "Good morning! It's day 1 of your adventure! What would you like to do today?"
+    },
+    {
+      "id": "7eda368b",
+      "character": "narrator",
+      "filename": "narrator_7eda368b.mp3",
+      "text": "Good morning! It's day 2 of your adventure! What would you like to do today?",
+      "clean_text": "Good morning! It's day 2 of your adventure! What would you like to do today?"
+    },
+    {
+      "id": "a1778cb9",
+      "character": "narrator",
+      "filename": "narrator_a1778cb9.mp3",
+      "text": "Good morning! It's day 3 of your adventure! What would you like to do today?",
+      "clean_text": "Good morning! It's day 3 of your adventure! What would you like to do today?"
+    },
+    {
+      "id": "48b72556",
+      "character": "narrator",
+      "filename": "narrator_48b72556.mp3",
+      "text": "Great choice! Let's cook breakfast!",
+      "clean_text": "Great choice! Let's cook breakfast!"
+    },
+    {
+      "id": "ffb021d1",
+      "character": "narrator",
+      "filename": "narrator_ffb021d1.mp3",
+      "text": "Great choice! Let's pick vegetables!",
+      "clean_text": "Great choice! Let's pick vegetables!"
+    },
+    {
+      "id": "51309285",
+      "character": "narrator",
+      "filename": "narrator_51309285.mp3",
+      "text": "Great choice! Let's play at the playground!",
+      "clean_text": "Great choice! Let's play at the playground!"
+    },
+    {
+      "id": "e2aef67b",
+      "character": "narrator",
+      "filename": "narrator_e2aef67b.mp3",
+      "text": "Great choice! Let's visit the fancy restaurant!",
+      "clean_text": "Great choice! Let's visit the fancy restaurant!"
+    },
+    {
+      "id": "60ca9d8e",
+      "character": "narrator",
+      "filename": "narrator_60ca9d8e.mp3",
+      "text": "What a wonderful day 1! Now let's stock the fridge and visit the fancy restaurant!",
+      "clean_text": "What a wonderful day 1! Now let's stock the fridge and visit the fancy restaurant!"
+    },
+    {
+      "id": "21952f6e",
+      "character": "narrator",
+      "filename": "narrator_21952f6e.mp3",
+      "text": "What a wonderful day 2! Now let's stock the fridge and visit the fancy restaurant!",
+      "clean_text": "What a wonderful day 2! Now let's stock the fridge and visit the fancy restaurant!"
+    },
+    {
+      "id": "97856651",
+      "character": "narrator",
+      "filename": "narrator_97856651.mp3",
+      "text": "What a wonderful day 3! Now let's stock the fridge and visit the fancy restaurant!",
+      "clean_text": "What a wonderful day 3! Now let's stock the fridge and visit the fancy restaurant!"
+    },
+    {
+      "id": "3518fe88",
+      "character": "narrator",
+      "filename": "narrator_3518fe88.mp3",
+      "text": "What a wonderful day 1! You completed all 4 activities!",
+      "clean_text": "What a wonderful day 1! You completed all 4 activities!"
+    },
+    {
+      "id": "17dbd685",
+      "character": "narrator",
+      "filename": "narrator_17dbd685.mp3",
+      "text": "What a wonderful day 2! You completed all 4 activities!",
+      "clean_text": "What a wonderful day 2! You completed all 4 activities!"
+    },
+    {
+      "id": "bd2833a0",
+      "character": "narrator",
+      "filename": "narrator_bd2833a0.mp3",
+      "text": "What a wonderful day 3! You completed all 4 activities!",
+      "clean_text": "What a wonderful day 3! You completed all 4 activities!"
+    },
+    {
+      "id": "0a8646db",
+      "character": "narrator",
+      "filename": "narrator_0a8646db.mp3",
+      "text": "Time to rest and get ready for day 2!",
+      "clean_text": "Time to rest and get ready for day 2!"
+    },
+    {
+      "id": "802d6afc",
+      "character": "narrator",
+      "filename": "narrator_802d6afc.mp3",
+      "text": "Time to rest and get ready for day 3!",
+      "clean_text": "Time to rest and get ready for day 3!"
+    },
+    {
+      "id": "afe7498c",
+      "character": "narrator",
+      "filename": "narrator_afe7498c.mp3",
+      "text": "Good morning! Day 1 begins!",
+      "clean_text": "Good morning! Day 1 begins!"
+    },
+    {
+      "id": "abd85e15",
+      "character": "narrator",
+      "filename": "narrator_abd85e15.mp3",
+      "text": "Good morning! Day 2 begins!",
+      "clean_text": "Good morning! Day 2 begins!"
+    },
+    {
+      "id": "9f2976f6",
+      "character": "narrator",
+      "filename": "narrator_9f2976f6.mp3",
+      "text": "Good morning! Day 3 begins!",
+      "clean_text": "Good morning! Day 3 begins!"
+    },
+    {
+      "id": "7c88f54b",
+      "character": "george",
+      "filename": "george_7c88f54b.mp3",
+      "text": "George washed a 🥕!",
+      "clean_text": "George washed a !"
+    },
+    {
+      "id": "2da0119f",
+      "character": "george",
+      "filename": "george_2da0119f.mp3",
+      "text": "George washed a 🥬!",
+      "clean_text": "George washed a !"
+    },
+    {
+      "id": "7176b162",
+      "character": "george",
+      "filename": "george_7176b162.mp3",
+      "text": "George washed a 🌽!",
+      "clean_text": "George washed a !"
+    },
+    {
+      "id": "1721c9ea",
+      "character": "george",
+      "filename": "george_1721c9ea.mp3",
+      "text": "George washed a 🍅!",
+      "clean_text": "George washed a !"
+    },
+    {
+      "id": "5350e490",
+      "character": "george",
+      "filename": "george_5350e490.mp3",
+      "text": "George washed a 🥒!",
+      "clean_text": "George washed a !"
+    },
+    {
+      "id": "a46ba437",
+      "character": "george",
+      "filename": "george_a46ba437.mp3",
+      "text": "George washed a 🥔!",
+      "clean_text": "George washed a !"
+    },
+    {
+      "id": "9ed90bb0",
+      "character": "matilda",
+      "filename": "matilda_9ed90bb0.mp3",
+      "text": "Matilda washed a 🥕!",
+      "clean_text": "Matilda washed a !"
+    },
+    {
+      "id": "8c117e7a",
+      "character": "matilda",
+      "filename": "matilda_8c117e7a.mp3",
+      "text": "Matilda washed a 🥬!",
+      "clean_text": "Matilda washed a !"
+    },
+    {
+      "id": "62d59cb7",
+      "character": "matilda",
+      "filename": "matilda_62d59cb7.mp3",
+      "text": "Matilda washed a 🌽!",
+      "clean_text": "Matilda washed a !"
+    },
+    {
+      "id": "b35ae4ee",
+      "character": "matilda",
+      "filename": "matilda_b35ae4ee.mp3",
+      "text": "Matilda washed a 🍅!",
+      "clean_text": "Matilda washed a !"
+    },
+    {
+      "id": "6ed8bb39",
+      "character": "matilda",
+      "filename": "matilda_6ed8bb39.mp3",
+      "text": "Matilda washed a 🥔!",
+      "clean_text": "Matilda washed a !"
+    },
+    {
+      "id": "ede17d44",
+      "character": "george",
+      "filename": "george_ede17d44.mp3",
+      "text": "George chopped a 🥕!",
+      "clean_text": "George chopped a !"
+    },
+    {
+      "id": "042551a0",
+      "character": "george",
+      "filename": "george_042551a0.mp3",
+      "text": "George chopped a 🥬!",
+      "clean_text": "George chopped a !"
+    },
+    {
+      "id": "0ea32bf5",
+      "character": "george",
+      "filename": "george_0ea32bf5.mp3",
+      "text": "George chopped a 🌽!",
+      "clean_text": "George chopped a !"
+    },
+    {
+      "id": "f03b849f",
+      "character": "george",
+      "filename": "george_f03b849f.mp3",
+      "text": "George chopped a 🍅!",
+      "clean_text": "George chopped a !"
+    },
+    {
+      "id": "ad9ef06c",
+      "character": "george",
+      "filename": "george_ad9ef06c.mp3",
+      "text": "George chopped a 🥒!",
+      "clean_text": "George chopped a !"
+    },
+    {
+      "id": "ca198418",
+      "character": "george",
+      "filename": "george_ca198418.mp3",
+      "text": "George chopped a 🥔!",
+      "clean_text": "George chopped a !"
+    },
+    {
+      "id": "df863278",
+      "character": "matilda",
+      "filename": "matilda_df863278.mp3",
+      "text": "Matilda chopped a 🥕!",
+      "clean_text": "Matilda chopped a !"
+    },
+    {
+      "id": "e95c9629",
+      "character": "matilda",
+      "filename": "matilda_e95c9629.mp3",
+      "text": "Matilda chopped a 🥬!",
+      "clean_text": "Matilda chopped a !"
+    },
+    {
+      "id": "c13c3093",
+      "character": "matilda",
+      "filename": "matilda_c13c3093.mp3",
+      "text": "Matilda chopped a 🌽!",
+      "clean_text": "Matilda chopped a !"
+    },
+    {
+      "id": "324cc867",
+      "character": "matilda",
+      "filename": "matilda_324cc867.mp3",
+      "text": "Matilda chopped a 🍅!",
+      "clean_text": "Matilda chopped a !"
+    },
+    {
+      "id": "5de7d857",
+      "character": "matilda",
+      "filename": "matilda_5de7d857.mp3",
+      "text": "Matilda chopped a 🥒!",
+      "clean_text": "Matilda chopped a !"
+    },
+    {
+      "id": "24e8d82a",
+      "character": "matilda",
+      "filename": "matilda_24e8d82a.mp3",
+      "text": "Matilda chopped a 🥔!",
+      "clean_text": "Matilda chopped a !"
     }
   ]
 }

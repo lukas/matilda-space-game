@@ -101,7 +101,21 @@ class MobileAudioSystem {
             return `./audio/${audioFile.filename}`;
         }
         
-        // Strategy 4: Partial matching for debugging
+        // Strategy 4: Template matching for dynamic content
+        if (cleanText.includes('washed a') || cleanText.includes('chopped a')) {
+            // For "George washed a 🥕!" find "George washed a !" pattern
+            const templateText = cleanText.replace(/[🥕🥬🌽🍅🥒🥔]/g, '');
+            audioFile = this.audioManifest.files.find(file => 
+                file.character === character && file.clean_text === templateText
+            );
+            
+            if (audioFile) {
+                console.log(`✅ Found template match: ${audioFile.filename}`);
+                return `./audio/${audioFile.filename}`;
+            }
+        }
+        
+        // Strategy 5: Partial matching for debugging
         const partialMatches = this.audioManifest.files.filter(file => 
             file.character === character && 
             (file.text.includes(cleanText.substring(0, 20)) || 
