@@ -55,7 +55,7 @@ class MobileAudioSystem {
         
         // Clean text the same way as in the extraction script
         const cleanText = text.replace(/[🚀👨‍🚀👩‍🚀🐕‍🦺🧊😢💖👨‍🍳👩‍🍳🥕🥬🌽🍅🥒🥔🌙🏠🚪😋🎉🎆✨🎈❤️🌉🏙️🗽🏢🏬🏘️🏡🚋🤵👰]/g, '')
-                          .replace(/^(George|Matilda|Moon Dog):\s*/i, '')
+                          .replace(/^(George|Matilda|Moon Dog|Narrator):\s*/i, '')
                           .trim();
         
         console.log(`🔍 Looking for audio: character="${character}", text="${text}"`);

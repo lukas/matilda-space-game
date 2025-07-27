@@ -72,19 +72,76 @@ class MoonVegetableGame {
             this.showMobileControls();
         }
         
-        // Add touch event listeners for mobile controls
+        // Add touch event listeners for mobile controls with continuous movement
         const directionButtons = document.querySelectorAll('.direction-btn');
         const switchButton = document.getElementById('switchBtn');
         
+        // Initialize mobile movement state
+        this.mobileMovementIntervals = {};
+        this.mobileMovementActive = {};
+        
         directionButtons.forEach(btn => {
+            const direction = btn.dataset.direction;
+            
+            // Prevent default behavior on the button itself
+            btn.style.touchAction = 'manipulation';
+            btn.style.userSelect = 'none';
+            btn.style.webkitUserSelect = 'none';
+            btn.style.webkitTouchCallout = 'none';
+            
+            // Touch events for mobile
             btn.addEventListener('touchstart', (e) => {
                 e.preventDefault();
-                const direction = btn.dataset.direction;
-                this.handleMobileMovement(direction);
-            });
+                e.stopPropagation();
+                // Ensure we capture the touch
+                if (e.touches && e.touches.length > 0) {
+                    this.startContinuousMovement(direction, btn);
+                }
+            }, { passive: false });
             
             btn.addEventListener('touchend', (e) => {
                 e.preventDefault();
+                e.stopPropagation();
+                this.stopContinuousMovement(direction, btn);
+            }, { passive: false });
+            
+            // Handle touch cancel (when finger moves off button)
+            btn.addEventListener('touchcancel', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.stopContinuousMovement(direction, btn);
+            }, { passive: false });
+            
+            // Handle touch move to detect when finger leaves button area
+            btn.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                if (e.touches && e.touches.length > 0) {
+                    const touch = e.touches[0];
+                    const rect = btn.getBoundingClientRect();
+                    const x = touch.clientX;
+                    const y = touch.clientY;
+                    
+                    // Check if touch is still within button bounds
+                    if (x < rect.left || x > rect.right || y < rect.top || y > rect.bottom) {
+                        this.stopContinuousMovement(direction, btn);
+                    }
+                }
+            }, { passive: false });
+            
+            // Handle mouse events for desktop testing
+            btn.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                this.startContinuousMovement(direction, btn);
+            });
+            
+            btn.addEventListener('mouseup', (e) => {
+                e.preventDefault();
+                this.stopContinuousMovement(direction, btn);
+            });
+            
+            btn.addEventListener('mouseleave', (e) => {
+                e.preventDefault();
+                this.stopContinuousMovement(direction, btn);
             });
         });
         
@@ -103,6 +160,15 @@ class MoonVegetableGame {
             } else {
                 this.hideMobileControls();
             }
+        });
+        
+        // Clear mobile movement timers when window loses focus or page unloads
+        window.addEventListener('blur', () => {
+            this.clearAllMobileMovementTimers();
+        });
+        
+        window.addEventListener('beforeunload', () => {
+            this.clearAllMobileMovementTimers();
         });
     }
     
@@ -135,6 +201,102 @@ class MoonVegetableGame {
         };
         
         this.handleKeyPress(keyEvent);
+    }
+    
+    startContinuousMovement(direction, button) {
+        // Stop any existing movement for this direction
+        this.stopContinuousMovement(direction, button);
+        
+        // Add visual feedback - make button appear pressed
+        button.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+        button.style.transform = 'scale(0.95)';
+        button.style.transition = 'all 0.1s ease';
+        
+        // Mark this direction as active
+        this.mobileMovementActive[direction] = true;
+        
+        // Start immediate movement
+        this.handleMobileMovement(direction);
+        
+        // Set up continuous movement with iOS-optimized timing
+        const initialDelay = 300; // Slightly longer initial delay for iOS
+        const repeatInterval = 100; // Slower repeat rate for smoother mobile experience
+        
+        // Store the timeout reference for cleanup
+        this.mobileMovementTimeouts = this.mobileMovementTimeouts || {};
+        
+        this.mobileMovementTimeouts[direction] = setTimeout(() => {
+            // Only start continuous movement if button is still being pressed
+            if (this.mobileMovementActive[direction]) {
+                this.mobileMovementIntervals[direction] = setInterval(() => {
+                    if (this.mobileMovementActive[direction]) {
+                        this.handleMobileMovement(direction);
+                    } else {
+                        // Clean up if movement is no longer active
+                        clearInterval(this.mobileMovementIntervals[direction]);
+                        this.mobileMovementIntervals[direction] = null;
+                    }
+                }, repeatInterval);
+            }
+        }, initialDelay);
+    }
+    
+    stopContinuousMovement(direction, button) {
+        // Remove visual feedback
+        button.style.backgroundColor = '';
+        button.style.transform = '';
+        button.style.transition = '';
+        
+        // Mark direction as inactive
+        this.mobileMovementActive[direction] = false;
+        
+        // Clear any existing timeout
+        if (this.mobileMovementTimeouts && this.mobileMovementTimeouts[direction]) {
+            clearTimeout(this.mobileMovementTimeouts[direction]);
+            this.mobileMovementTimeouts[direction] = null;
+        }
+        
+        // Clear any existing interval
+        if (this.mobileMovementIntervals[direction]) {
+            clearInterval(this.mobileMovementIntervals[direction]);
+            this.mobileMovementIntervals[direction] = null;
+        }
+    }
+    
+    clearAllMobileMovementTimers() {
+        // Clear all mobile movement timeouts
+        if (this.mobileMovementTimeouts) {
+            Object.keys(this.mobileMovementTimeouts).forEach(direction => {
+                if (this.mobileMovementTimeouts[direction]) {
+                    clearTimeout(this.mobileMovementTimeouts[direction]);
+                    this.mobileMovementTimeouts[direction] = null;
+                }
+            });
+        }
+        
+        // Clear all mobile movement intervals and reset states
+        if (this.mobileMovementIntervals) {
+            Object.keys(this.mobileMovementIntervals).forEach(direction => {
+                if (this.mobileMovementIntervals[direction]) {
+                    clearInterval(this.mobileMovementIntervals[direction]);
+                    this.mobileMovementIntervals[direction] = null;
+                }
+            });
+        }
+        
+        if (this.mobileMovementActive) {
+            Object.keys(this.mobileMovementActive).forEach(direction => {
+                this.mobileMovementActive[direction] = false;
+            });
+        }
+        
+        // Reset visual state of all direction buttons
+        const directionButtons = document.querySelectorAll('.direction-btn');
+        directionButtons.forEach(btn => {
+            btn.style.backgroundColor = '';
+            btn.style.transform = '';
+            btn.style.transition = '';
+        });
     }
     
     createPickupSound() {
@@ -455,6 +617,9 @@ class MoonVegetableGame {
             clearTimeout(this.gameTimer);
             this.gameTimer = null;
         }
+        
+        // Clear mobile movement timers
+        this.clearAllMobileMovementTimers();
         
         // Reset all cooking and game variables
         this.cookingStarted = false;

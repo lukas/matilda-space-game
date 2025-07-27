@@ -78,3 +78,37 @@ page.evaluate("window.game.moveCharacter('george', 'left', 10)")
 5. Total development cycle: < 3s per iteration
 
 � **Remember**: If any test takes longer than 3 seconds, refactor it to use direct state manipulation instead of full game simulation.
+
+## Updated Testing Guidelines (2025)
+
+### Strict Performance Requirements
+- **Global test timeout**: 3000ms (enforced in playwright.config.js)
+- **Action timeout**: 1000ms (clicks, taps, etc.)
+- **Navigation timeout**: 2000ms (page loads)
+
+### FORBIDDEN Test Patterns ❌
+- `await page.waitForTimeout(X)` where X > 100ms
+- `{ timeout: X }` where X > 1000ms
+- Testing character movement positions/distances
+- Testing game state transitions (cooking steps, day progression)
+- Testing audio playback or speech synthesis
+- Full game playthroughs or complex user journeys
+- Animation completion testing
+
+### ALLOWED Test Patterns ✅
+- `await expect(element).toBeVisible()` - DOM element visibility
+- `await expect(element).toBeAttached()` - DOM element existence
+- `await button.click()` - Event handlers fire without errors
+- `await element.tap()` - Touch event handlers work
+- Testing CSS classes are applied/removed
+- Testing DOM structure and element attributes
+- Basic syntax validation with `node -c script.js`
+
+### Mobile Testing Focus
+Test that mobile controls:
+1. Appear on mobile devices (DOM visibility)
+2. Respond to touch events without errors
+3. Have proper CSS touch properties applied
+4. Don't throw JavaScript errors when tapped
+
+**Do NOT test**: Character movement, continuous movement timing, visual feedback animations, or complex game logic.
