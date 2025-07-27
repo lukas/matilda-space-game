@@ -1,0 +1,44 @@
+# 🚀 Deploy Matilda and George's Moon Adventure to Netlify
+
+## Quick Deploy Options:
+
+### Option 1: Drag & Drop Deploy (Easiest)
+1. Go to https://app.netlify.com/drop
+2. Drag the file `matilda-moon-game-deploy.zip` from this folder
+3. Your game will be live instantly!
+
+### Option 2: GitHub Integration (Recommended)
+1. Go to https://app.netlify.com
+2. Click "New site from Git"
+3. Choose GitHub and authorize Netlify
+4. Select the repository: `lukas/matilda-space-game`
+5. Build settings:
+   - Build command: (leave empty)
+   - Publish directory: `.` (current directory)
+6. Click "Deploy site"
+
+Your game is now ready at: https://github.com/lukas/matilda-space-game
+
+### Option 3: Netlify CLI (Manual)
+If you want to complete the CLI deployment:
+1. Run: `netlify deploy --prod --dir=.`
+2. When prompted, choose "Create & configure a new project"
+3. Follow the prompts to set up your site
+
+## Features Deployed:
+✅ Mobile-responsive design for iPhone
+✅ Touch controls with D-pad interface  
+✅ Complete space adventure game
+✅ Interactive cooking mini-game
+✅ 3-day adventure with activities
+✅ Return journey to Earth
+✅ Text-to-speech narration
+✅ Performance optimizations
+
+## Game URL Structure:
+- Main game: `/index.html` (or just `/`)
+- All assets are contained in single directory
+- No external dependencies required
+- Works offline after first load
+
+The game is now ready for deployment! 🎮🌙
