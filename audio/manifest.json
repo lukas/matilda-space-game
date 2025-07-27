@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "generated_at": "2025-07-27 10:05:03",
-  "total_files": 34,
+  "generated_at": "2025-07-27 10:25:04",
+  "total_files": 55,
   "voice_mappings": {
     "narrator": "pNInz6obpgDQGcFmaJgB",
     "george": "VR6AewLTigWG4xSOukaG",
@@ -246,6 +246,153 @@
       "filename": "narrator_0ec73adc.mp3",
       "text": "What an amazing adventure! George, Matilda and Moon Dog will be best friends forever!",
       "clean_text": "What an amazing adventure! George, Matilda and Moon Dog will be best friends forever!"
+    },
+    {
+      "id": "a5231ec1",
+      "character": "narrator",
+      "filename": "narrator_a5231ec1.mp3",
+      "text": "We have landed on the moon! Now let's walk to Moon Dog's house!",
+      "clean_text": "We have landed on the moon! Now let's walk to Moon Dog's house!"
+    },
+    {
+      "id": "83963bce",
+      "character": "narrator",
+      "filename": "narrator_83963bce.mp3",
+      "text": "Great! Now let's chop the vegetables on the cutting board!",
+      "clean_text": "Great! Now let's chop the vegetables on the cutting board!"
+    },
+    {
+      "id": "f56f5ee4",
+      "character": "narrator",
+      "filename": "narrator_f56f5ee4.mp3",
+      "text": "Perfect! Now let's arrange the chopped vegetables on the plate!",
+      "clean_text": "Perfect! Now let's arrange the chopped vegetables on the plate!"
+    },
+    {
+      "id": "fe18af6c",
+      "character": "moondog",
+      "filename": "moondog_fe18af6c.mp3",
+      "text": "🐕‍🦺 Moon Dog: This is the most delicious meal I've ever had! Thank you both!",
+      "clean_text": "Moon Dog: This is the most delicious meal I've ever had! Thank you both!"
+    },
+    {
+      "id": "f97d6150",
+      "character": "george",
+      "filename": "george_f97d6150.mp3",
+      "text": "👨‍🍳 George: We're so happy to cook for you, Moon Dog!",
+      "clean_text": "George: We're so happy to cook for you, Moon Dog!"
+    },
+    {
+      "id": "f4546d4f",
+      "character": "matilda",
+      "filename": "matilda_f4546d4f.mp3",
+      "text": "👩‍🍳 Matilda: It's wonderful to share a meal with friends!",
+      "clean_text": "Matilda: It's wonderful to share a meal with friends!"
+    },
+    {
+      "id": "774e6c9d",
+      "character": "matilda",
+      "filename": "matilda_774e6c9d.mp3",
+      "text": "👩‍🚀 Matilda: These moon vegetables are the most colorful I've ever seen!",
+      "clean_text": "Matilda: These moon vegetables are the most colorful I've ever seen!"
+    },
+    {
+      "id": "151c2c42",
+      "character": "george",
+      "filename": "george_151c2c42.mp3",
+      "text": "👨‍🚀 George: Let's pick some for later! Fresh vegetables taste the best!",
+      "clean_text": "George: Let's pick some for later! Fresh vegetables taste the best!"
+    },
+    {
+      "id": "8af5f20f",
+      "character": "moondog",
+      "filename": "moondog_8af5f20f.mp3",
+      "text": "🐕‍🦺 Moon Dog: I've never had such a wonderful feast! You two are amazing chefs!",
+      "clean_text": "Moon Dog: I've never had such a wonderful feast! You two are amazing chefs!"
+    },
+    {
+      "id": "3dbc4062",
+      "character": "narrator",
+      "filename": "narrator_3dbc4062.mp3",
+      "text": "Moon Dog's fridge is now fully stocked with delicious food!",
+      "clean_text": "Moon Dog's fridge is now fully stocked with delicious food!"
+    },
+    {
+      "id": "ad01f5f1",
+      "character": "narrator",
+      "filename": "narrator_ad01f5f1.mp3",
+      "text": "Now let's go to the fanciest restaurant on the moon!",
+      "clean_text": "Now let's go to the fanciest restaurant on the moon!"
+    },
+    {
+      "id": "6904d32f",
+      "character": "matilda",
+      "filename": "matilda_6904d32f.mp3",
+      "text": "👩‍🚀 Matilda: We'll never forget our amazing moon adventure with you!",
+      "clean_text": "Matilda: We'll never forget our amazing moon adventure with you!"
+    },
+    {
+      "id": "dfe227bc",
+      "character": "moondog",
+      "filename": "moondog_dfe227bc.mp3",
+      "text": "🐕‍🦺 Moon Dog: Come back and visit me again soon! I'll miss you both so much!",
+      "clean_text": "Moon Dog: Come back and visit me again soon! I'll miss you both so much!"
+    },
+    {
+      "id": "7cff81b1",
+      "character": "narrator",
+      "filename": "narrator_7cff81b1.mp3",
+      "text": "Now it's time to return to Earth! The spaceship is flying back home!",
+      "clean_text": "Now it's time to return to Earth! The spaceship is flying back home!"
+    },
+    {
+      "id": "9aaac968",
+      "character": "narrator",
+      "filename": "narrator_9aaac968.mp3",
+      "text": "Look! Earth is getting bigger! We're almost home!",
+      "clean_text": "Look! Earth is getting bigger! We're almost home!"
+    },
+    {
+      "id": "241a4b2d",
+      "character": "george",
+      "filename": "george_241a4b2d.mp3",
+      "text": "👨‍🚀 George: Wow! It feels so good to be back in New York! I can't wait to tell everyone about our moon adventure!",
+      "clean_text": "George: Wow! It feels so good to be back in New York! I can't wait to tell everyone about our moon adventure!"
+    },
+    {
+      "id": "d38744d7",
+      "character": "matilda",
+      "filename": "matilda_d38744d7.mp3",
+      "text": "👩‍🚀 Matilda: I'm going to miss you so much, George! This was the best adventure ever!",
+      "clean_text": "Matilda: I'm going to miss you so much, George! This was the best adventure ever!"
+    },
+    {
+      "id": "d3d2c2c1",
+      "character": "george",
+      "filename": "george_d3d2c2c1.mp3",
+      "text": "👨‍🚀 George: I'll miss you too, Matilda! Let's plan another adventure soon!",
+      "clean_text": "George: I'll miss you too, Matilda! Let's plan another adventure soon!"
+    },
+    {
+      "id": "ee090b83",
+      "character": "narrator",
+      "filename": "narrator_ee090b83.mp3",
+      "text": "Welcome to beautiful San Francisco! This is Matilda's home!",
+      "clean_text": "Welcome to beautiful San Francisco! This is Matilda's home!"
+    },
+    {
+      "id": "f4414700",
+      "character": "matilda",
+      "filename": "matilda_f4414700.mp3",
+      "text": "👩‍🚀 Matilda: Home sweet home! I love San Francisco, but I'll always remember our incredible moon adventure!",
+      "clean_text": "Matilda: Home sweet home! I love San Francisco, but I'll always remember our incredible moon adventure!"
+    },
+    {
+      "id": "f5136875",
+      "character": "matilda",
+      "filename": "matilda_f5136875.mp3",
+      "text": "👩‍🚀 Matilda: I can't wait to tell my family about Moon Dog, the vegetable garden, the playground, and all our fun activities!",
+      "clean_text": "Matilda: I can't wait to tell my family about Moon Dog, the vegetable garden, the playground, and all our fun activities!"
     }
   ]
 }

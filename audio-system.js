@@ -53,17 +53,70 @@ class MobileAudioSystem {
         if (!this.audioManifest) return null;
         
         // Clean text the same way as in the extraction script
-        const cleanText = text.replace(/[🚀👨‍🚀👩‍🚀🐕‍🦺🧊😢💖👨‍🍳👩‍🍳🥕🥬🌽🍅🥒🥔🌙🏠🚪😋🎉🎆✨🎈❤️🌉🏙️🗽🏢🏬🏘️🏡🚋]/g, '')
+        const cleanText = text.replace(/[🚀👨‍🚀👩‍🚀🐕‍🦺🧊😢💖👨‍🍳👩‍🍳🥕🥬🌽🍅🥒🥔🌙🏠🚪😋🎉🎆✨🎈❤️🌉🏙️🗽🏢🏬🏘️🏡🚋🤵👰]/g, '')
                           .replace(/^(George|Matilda|Moon Dog):\s*/i, '')
                           .trim();
         
-        // Find matching audio file
-        const audioFile = this.audioManifest.files.find(file => 
-            file.character === character && 
-            (file.text === text || file.clean_text === cleanText)
+        console.log(`🔍 Looking for audio: character="${character}", text="${text}"`);
+        console.log(`🔍 Clean text: "${cleanText}"`);
+        
+        // Try multiple matching strategies
+        let audioFile = null;
+        
+        // Strategy 1: Exact match with original text
+        audioFile = this.audioManifest.files.find(file => 
+            file.character === character && file.text === text
         );
         
-        return audioFile ? `./audio/${audioFile.filename}` : null;
+        if (audioFile) {
+            console.log(`✅ Found exact match: ${audioFile.filename}`);
+            return `./audio/${audioFile.filename}`;
+        }
+        
+        // Strategy 2: Match with clean text
+        audioFile = this.audioManifest.files.find(file => 
+            file.character === character && file.clean_text === cleanText
+        );
+        
+        if (audioFile) {
+            console.log(`✅ Found clean text match: ${audioFile.filename}`);
+            return `./audio/${audioFile.filename}`;
+        }
+        
+        // Strategy 3: Fuzzy matching (remove extra spaces, normalize quotes)
+        const normalizedText = text.replace(/\s+/g, ' ').replace(/['"]/g, "'").trim();
+        const normalizedCleanText = cleanText.replace(/\s+/g, ' ').replace(/['"]/g, "'").trim();
+        
+        audioFile = this.audioManifest.files.find(file => {
+            const normalizedFileText = file.text.replace(/\s+/g, ' ').replace(/['"]/g, "'").trim();
+            const normalizedFileCleanText = file.clean_text.replace(/\s+/g, ' ').replace(/['"]/g, "'").trim();
+            
+            return file.character === character && 
+                   (normalizedFileText === normalizedText || 
+                    normalizedFileCleanText === normalizedCleanText);
+        });
+        
+        if (audioFile) {
+            console.log(`✅ Found fuzzy match: ${audioFile.filename}`);
+            return `./audio/${audioFile.filename}`;
+        }
+        
+        // Strategy 4: Partial matching for debugging
+        const partialMatches = this.audioManifest.files.filter(file => 
+            file.character === character && 
+            (file.text.includes(cleanText.substring(0, 20)) || 
+             cleanText.includes(file.clean_text.substring(0, 20)))
+        );
+        
+        if (partialMatches.length > 0) {
+            console.log(`🔍 Found ${partialMatches.length} partial matches:`);
+            partialMatches.forEach(file => {
+                console.log(`  - ${file.filename}: "${file.clean_text}"`);
+            });
+        }
+        
+        console.log(`❌ No audio file found for: "${cleanText}"`);
+        return null;
     }
     
     async preloadAudio(audioPath) {
