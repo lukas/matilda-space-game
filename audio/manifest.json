@@ -1,0 +1,251 @@
+{
+  "version": "1.0",
+  "generated_at": "2025-07-27 10:05:03",
+  "total_files": 34,
+  "voice_mappings": {
+    "narrator": "pNInz6obpgDQGcFmaJgB",
+    "george": "VR6AewLTigWG4xSOukaG",
+    "matilda": "jsCqWAovK2LkecY7zXl4",
+    "moondog": "cgSgspJ2msm6clMCkdW9"
+  },
+  "files": [
+    {
+      "id": "54161f30",
+      "character": "narrator",
+      "filename": "narrator_54161f30.mp3",
+      "text": "Beautiful! The meal is plated and ready to eat!",
+      "clean_text": "Beautiful! The meal is plated and ready to eat!"
+    },
+    {
+      "id": "22222ef3",
+      "character": "narrator",
+      "filename": "narrator_22222ef3.mp3",
+      "text": "Dinner is ready! Everyone gather around the table to eat!",
+      "clean_text": "Dinner is ready! Everyone gather around the table to eat!"
+    },
+    {
+      "id": "1dc8b0b5",
+      "character": "narrator",
+      "filename": "narrator_1dc8b0b5.mp3",
+      "text": "What a delicious meal! Everyone is eating together!",
+      "clean_text": "What a delicious meal! Everyone is eating together!"
+    },
+    {
+      "id": "9aad7c45",
+      "character": "narrator",
+      "filename": "narrator_9aad7c45.mp3",
+      "text": "After the wonderful dinner, everyone is getting sleepy...",
+      "clean_text": "After the wonderful dinner, everyone is getting sleepy..."
+    },
+    {
+      "id": "ef31c954",
+      "character": "narrator",
+      "filename": "narrator_ef31c954.mp3",
+      "text": "Good night! Everyone is sleeping peacefully...",
+      "clean_text": "Good night! Everyone is sleeping peacefully..."
+    },
+    {
+      "id": "4280aede",
+      "character": "narrator",
+      "filename": "narrator_4280aede.mp3",
+      "text": "The next morning...",
+      "clean_text": "The next morning..."
+    },
+    {
+      "id": "a142c39d",
+      "character": "narrator",
+      "filename": "narrator_a142c39d.mp3",
+      "text": "Welcome to your 3-day adventure with Moon Dog! Each day you can choose fun activities to do together!",
+      "clean_text": "Welcome to your 3-day adventure with Moon Dog! Each day you can choose fun activities to do together!"
+    },
+    {
+      "id": "57ceb4e0",
+      "character": "narrator",
+      "filename": "narrator_57ceb4e0.mp3",
+      "text": "Everyone is helping to make a delicious breakfast! Pancakes, bacon, eggs, and fresh fruit!",
+      "clean_text": "Everyone is helping to make a delicious breakfast! Pancakes, bacon, eggs, and fresh fruit!"
+    },
+    {
+      "id": "5f6cfe01",
+      "character": "moondog",
+      "filename": "moondog_5f6cfe01.mp3",
+      "text": "🐕‍🦺 Moon Dog: This breakfast smells amazing! Thank you for cooking with me!",
+      "clean_text": "Moon Dog: This breakfast smells amazing! Thank you for cooking with me!"
+    },
+    {
+      "id": "2fe0ba20",
+      "character": "george",
+      "filename": "george_2fe0ba20.mp3",
+      "text": "👨‍🚀 George: Cooking together is so much fun!",
+      "clean_text": "George: Cooking together is so much fun!"
+    },
+    {
+      "id": "f9f7c43a",
+      "character": "matilda",
+      "filename": "matilda_f9f7c43a.mp3",
+      "text": "👩‍🚀 Matilda: The best part is sharing it with friends!",
+      "clean_text": "Matilda: The best part is sharing it with friends!"
+    },
+    {
+      "id": "0d8b6657",
+      "character": "narrator",
+      "filename": "narrator_0d8b6657.mp3",
+      "text": "Look at this amazing moon garden! So many fresh vegetables growing in the lunar soil!",
+      "clean_text": "Look at this amazing moon garden! So many fresh vegetables growing in the lunar soil!"
+    },
+    {
+      "id": "991b002b",
+      "character": "moondog",
+      "filename": "moondog_991b002b.mp3",
+      "text": "🐕‍🦺 Moon Dog: My garden has grown so well thanks to your help! The vegetables are huge!",
+      "clean_text": "Moon Dog: My garden has grown so well thanks to your help! The vegetables are huge!"
+    },
+    {
+      "id": "993540d4",
+      "character": "narrator",
+      "filename": "narrator_993540d4.mp3",
+      "text": "Welcome to the amazing Moon Playground! Everything floats and bounces in the low gravity!",
+      "clean_text": "Welcome to the amazing Moon Playground! Everything floats and bounces in the low gravity!"
+    },
+    {
+      "id": "8b8f15fa",
+      "character": "george",
+      "filename": "george_8b8f15fa.mp3",
+      "text": "👨‍🚀 George: Wow! I can jump so high here on the moon!",
+      "clean_text": "George: Wow! I can jump so high here on the moon!"
+    },
+    {
+      "id": "59140622",
+      "character": "matilda",
+      "filename": "matilda_59140622.mp3",
+      "text": "👩‍🚀 Matilda: The merry-go-round spins in slow motion! This is incredible!",
+      "clean_text": "Matilda: The merry-go-round spins in slow motion! This is incredible!"
+    },
+    {
+      "id": "520f1bea",
+      "character": "moondog",
+      "filename": "moondog_520f1bea.mp3",
+      "text": "🐕‍🦺 Moon Dog: This is my favorite place to play! The low gravity makes everything more fun!",
+      "clean_text": "Moon Dog: This is my favorite place to play! The low gravity makes everything more fun!"
+    },
+    {
+      "id": "6393472a",
+      "character": "narrator",
+      "filename": "narrator_6393472a.mp3",
+      "text": "Time to make dinner! This will be extra special!",
+      "clean_text": "Time to make dinner! This will be extra special!"
+    },
+    {
+      "id": "24de1244",
+      "character": "narrator",
+      "filename": "narrator_24de1244.mp3",
+      "text": "Everyone is working together to create a magnificent dinner feast!",
+      "clean_text": "Everyone is working together to create a magnificent dinner feast!"
+    },
+    {
+      "id": "6caf54e0",
+      "character": "matilda",
+      "filename": "matilda_6caf54e0.mp3",
+      "text": "👩‍🚀 Matilda: This dinner looks fit for moon royalty!",
+      "clean_text": "Matilda: This dinner looks fit for moon royalty!"
+    },
+    {
+      "id": "0fc7c496",
+      "character": "george",
+      "filename": "george_0fc7c496.mp3",
+      "text": "👨‍🚀 George: The smells are making me so hungry!",
+      "clean_text": "George: The smells are making me so hungry!"
+    },
+    {
+      "id": "74c28425",
+      "character": "narrator",
+      "filename": "narrator_74c28425.mp3",
+      "text": "Welcome to the most elegant restaurant on the moon! Everyone looks so fancy!",
+      "clean_text": "Welcome to the most elegant restaurant on the moon! Everyone looks so fancy!"
+    },
+    {
+      "id": "34382d1c",
+      "character": "george",
+      "filename": "george_34382d1c.mp3",
+      "text": "🤵 George: I feel so fancy in this tuxedo!",
+      "clean_text": "🤵 George: I feel so fancy in this tuxedo!"
+    },
+    {
+      "id": "059eb177",
+      "character": "matilda",
+      "filename": "matilda_059eb177.mp3",
+      "text": "👰 Matilda: This restaurant is absolutely beautiful!",
+      "clean_text": "👰 Matilda: This restaurant is absolutely beautiful!"
+    },
+    {
+      "id": "4e4ff699",
+      "character": "moondog",
+      "filename": "moondog_4e4ff699.mp3",
+      "text": "🐕‍🦺 Moon Dog: Thank you for bringing me to such a special place! This is the best day ever!",
+      "clean_text": "Moon Dog: Thank you for bringing me to such a special place! This is the best day ever!"
+    },
+    {
+      "id": "39cb0a6c",
+      "character": "narrator",
+      "filename": "narrator_39cb0a6c.mp3",
+      "text": "What a perfect ending to a wonderful day!",
+      "clean_text": "What a perfect ending to a wonderful day!"
+    },
+    {
+      "id": "2088ff0c",
+      "character": "narrator",
+      "filename": "narrator_2088ff0c.mp3",
+      "text": "What an amazing 3-day adventure! Time to say goodbye to Moon Dog and return to Earth...",
+      "clean_text": "What an amazing 3-day adventure! Time to say goodbye to Moon Dog and return to Earth..."
+    },
+    {
+      "id": "f847470b",
+      "character": "narrator",
+      "filename": "narrator_f847470b.mp3",
+      "text": "Everyone is sleeping peacefully after such a fun day...",
+      "clean_text": "Everyone is sleeping peacefully after such a fun day..."
+    },
+    {
+      "id": "8f2c521d",
+      "character": "moondog",
+      "filename": "moondog_8f2c521d.mp3",
+      "text": "🐕‍🦺 Moon Dog: Thank you so much for the most wonderful 3 days of my life!",
+      "clean_text": "Moon Dog: Thank you so much for the most wonderful 3 days of my life!"
+    },
+    {
+      "id": "df11e06f",
+      "character": "george",
+      "filename": "george_df11e06f.mp3",
+      "text": "👨‍🚀 George: We had so much fun! Thank you for being such a great friend!",
+      "clean_text": "George: We had so much fun! Thank you for being such a great friend!"
+    },
+    {
+      "id": "222a6f2f",
+      "character": "narrator",
+      "filename": "narrator_222a6f2f.mp3",
+      "text": "Welcome to New York City! This is where George lives!",
+      "clean_text": "Welcome to New York City! This is where George lives!"
+    },
+    {
+      "id": "a8ad0225",
+      "character": "narrator",
+      "filename": "narrator_a8ad0225.mp3",
+      "text": "George waves goodbye as Matilda continues on to San Francisco...",
+      "clean_text": "George waves goodbye as Matilda continues on to San Francisco..."
+    },
+    {
+      "id": "8dc414df",
+      "character": "matilda",
+      "filename": "matilda_8dc414df.mp3",
+      "text": "👩‍🚀 Matilda: George, Moon Dog, and I will be friends forever! What an amazing adventure we had!",
+      "clean_text": "Matilda: George, Moon Dog, and I will be friends forever! What an amazing adventure we had!"
+    },
+    {
+      "id": "0ec73adc",
+      "character": "narrator",
+      "filename": "narrator_0ec73adc.mp3",
+      "text": "What an amazing adventure! George, Matilda and Moon Dog will be best friends forever!",
+      "clean_text": "What an amazing adventure! George, Matilda and Moon Dog will be best friends forever!"
+    }
+  ]
+}
