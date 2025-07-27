@@ -1,0 +1,5 @@
+{
+  "siteId": "",
+  "path": "."
+}
+EOF < /dev/null

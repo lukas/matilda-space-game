@@ -1,0 +1,215 @@
+{
+  "total_entries": 34,
+  "characters": [
+    "narrator",
+    "moondog",
+    "george",
+    "matilda"
+  ],
+  "dialogue": [
+    {
+      "id": "54161f30",
+      "text": "Beautiful! The meal is plated and ready to eat!",
+      "character": "narrator",
+      "clean_text": "Beautiful! The meal is plated and ready to eat!"
+    },
+    {
+      "id": "22222ef3",
+      "text": "Dinner is ready! Everyone gather around the table to eat!",
+      "character": "narrator",
+      "clean_text": "Dinner is ready! Everyone gather around the table to eat!"
+    },
+    {
+      "id": "1dc8b0b5",
+      "text": "What a delicious meal! Everyone is eating together!",
+      "character": "narrator",
+      "clean_text": "What a delicious meal! Everyone is eating together!"
+    },
+    {
+      "id": "9aad7c45",
+      "text": "After the wonderful dinner, everyone is getting sleepy...",
+      "character": "narrator",
+      "clean_text": "After the wonderful dinner, everyone is getting sleepy..."
+    },
+    {
+      "id": "ef31c954",
+      "text": "Good night! Everyone is sleeping peacefully...",
+      "character": "narrator",
+      "clean_text": "Good night! Everyone is sleeping peacefully..."
+    },
+    {
+      "id": "4280aede",
+      "text": "The next morning...",
+      "character": "narrator",
+      "clean_text": "The next morning..."
+    },
+    {
+      "id": "a142c39d",
+      "text": "Welcome to your 3-day adventure with Moon Dog! Each day you can choose fun activities to do together!",
+      "character": "narrator",
+      "clean_text": "Welcome to your 3-day adventure with Moon Dog! Each day you can choose fun activities to do together!"
+    },
+    {
+      "id": "57ceb4e0",
+      "text": "Everyone is helping to make a delicious breakfast! Pancakes, bacon, eggs, and fresh fruit!",
+      "character": "narrator",
+      "clean_text": "Everyone is helping to make a delicious breakfast! Pancakes, bacon, eggs, and fresh fruit!"
+    },
+    {
+      "id": "5f6cfe01",
+      "text": "🐕‍🦺 Moon Dog: This breakfast smells amazing! Thank you for cooking with me!",
+      "character": "moondog",
+      "clean_text": "Moon Dog: This breakfast smells amazing! Thank you for cooking with me!"
+    },
+    {
+      "id": "2fe0ba20",
+      "text": "👨‍🚀 George: Cooking together is so much fun!",
+      "character": "george",
+      "clean_text": "George: Cooking together is so much fun!"
+    },
+    {
+      "id": "f9f7c43a",
+      "text": "👩‍🚀 Matilda: The best part is sharing it with friends!",
+      "character": "matilda",
+      "clean_text": "Matilda: The best part is sharing it with friends!"
+    },
+    {
+      "id": "0d8b6657",
+      "text": "Look at this amazing moon garden! So many fresh vegetables growing in the lunar soil!",
+      "character": "narrator",
+      "clean_text": "Look at this amazing moon garden! So many fresh vegetables growing in the lunar soil!"
+    },
+    {
+      "id": "991b002b",
+      "text": "🐕‍🦺 Moon Dog: My garden has grown so well thanks to your help! The vegetables are huge!",
+      "character": "moondog",
+      "clean_text": "Moon Dog: My garden has grown so well thanks to your help! The vegetables are huge!"
+    },
+    {
+      "id": "993540d4",
+      "text": "Welcome to the amazing Moon Playground! Everything floats and bounces in the low gravity!",
+      "character": "narrator",
+      "clean_text": "Welcome to the amazing Moon Playground! Everything floats and bounces in the low gravity!"
+    },
+    {
+      "id": "8b8f15fa",
+      "text": "👨‍🚀 George: Wow! I can jump so high here on the moon!",
+      "character": "george",
+      "clean_text": "George: Wow! I can jump so high here on the moon!"
+    },
+    {
+      "id": "59140622",
+      "text": "👩‍🚀 Matilda: The merry-go-round spins in slow motion! This is incredible!",
+      "character": "matilda",
+      "clean_text": "Matilda: The merry-go-round spins in slow motion! This is incredible!"
+    },
+    {
+      "id": "520f1bea",
+      "text": "🐕‍🦺 Moon Dog: This is my favorite place to play! The low gravity makes everything more fun!",
+      "character": "moondog",
+      "clean_text": "Moon Dog: This is my favorite place to play! The low gravity makes everything more fun!"
+    },
+    {
+      "id": "6393472a",
+      "text": "Time to make dinner! This will be extra special!",
+      "character": "narrator",
+      "clean_text": "Time to make dinner! This will be extra special!"
+    },
+    {
+      "id": "24de1244",
+      "text": "Everyone is working together to create a magnificent dinner feast!",
+      "character": "narrator",
+      "clean_text": "Everyone is working together to create a magnificent dinner feast!"
+    },
+    {
+      "id": "6caf54e0",
+      "text": "👩‍🚀 Matilda: This dinner looks fit for moon royalty!",
+      "character": "matilda",
+      "clean_text": "Matilda: This dinner looks fit for moon royalty!"
+    },
+    {
+      "id": "0fc7c496",
+      "text": "👨‍🚀 George: The smells are making me so hungry!",
+      "character": "george",
+      "clean_text": "George: The smells are making me so hungry!"
+    },
+    {
+      "id": "74c28425",
+      "text": "Welcome to the most elegant restaurant on the moon! Everyone looks so fancy!",
+      "character": "narrator",
+      "clean_text": "Welcome to the most elegant restaurant on the moon! Everyone looks so fancy!"
+    },
+    {
+      "id": "34382d1c",
+      "text": "🤵 George: I feel so fancy in this tuxedo!",
+      "character": "george",
+      "clean_text": "🤵 George: I feel so fancy in this tuxedo!"
+    },
+    {
+      "id": "059eb177",
+      "text": "👰 Matilda: This restaurant is absolutely beautiful!",
+      "character": "matilda",
+      "clean_text": "👰 Matilda: This restaurant is absolutely beautiful!"
+    },
+    {
+      "id": "4e4ff699",
+      "text": "🐕‍🦺 Moon Dog: Thank you for bringing me to such a special place! This is the best day ever!",
+      "character": "moondog",
+      "clean_text": "Moon Dog: Thank you for bringing me to such a special place! This is the best day ever!"
+    },
+    {
+      "id": "39cb0a6c",
+      "text": "What a perfect ending to a wonderful day!",
+      "character": "narrator",
+      "clean_text": "What a perfect ending to a wonderful day!"
+    },
+    {
+      "id": "2088ff0c",
+      "text": "What an amazing 3-day adventure! Time to say goodbye to Moon Dog and return to Earth...",
+      "character": "narrator",
+      "clean_text": "What an amazing 3-day adventure! Time to say goodbye to Moon Dog and return to Earth..."
+    },
+    {
+      "id": "f847470b",
+      "text": "Everyone is sleeping peacefully after such a fun day...",
+      "character": "narrator",
+      "clean_text": "Everyone is sleeping peacefully after such a fun day..."
+    },
+    {
+      "id": "8f2c521d",
+      "text": "🐕‍🦺 Moon Dog: Thank you so much for the most wonderful 3 days of my life!",
+      "character": "moondog",
+      "clean_text": "Moon Dog: Thank you so much for the most wonderful 3 days of my life!"
+    },
+    {
+      "id": "df11e06f",
+      "text": "👨‍🚀 George: We had so much fun! Thank you for being such a great friend!",
+      "character": "george",
+      "clean_text": "George: We had so much fun! Thank you for being such a great friend!"
+    },
+    {
+      "id": "222a6f2f",
+      "text": "Welcome to New York City! This is where George lives!",
+      "character": "narrator",
+      "clean_text": "Welcome to New York City! This is where George lives!"
+    },
+    {
+      "id": "a8ad0225",
+      "text": "George waves goodbye as Matilda continues on to San Francisco...",
+      "character": "narrator",
+      "clean_text": "George waves goodbye as Matilda continues on to San Francisco..."
+    },
+    {
+      "id": "8dc414df",
+      "text": "👩‍🚀 Matilda: George, Moon Dog, and I will be friends forever! What an amazing adventure we had!",
+      "character": "matilda",
+      "clean_text": "Matilda: George, Moon Dog, and I will be friends forever! What an amazing adventure we had!"
+    },
+    {
+      "id": "0ec73adc",
+      "text": "What an amazing adventure! George, Matilda and Moon Dog will be best friends forever!",
+      "character": "narrator",
+      "clean_text": "What an amazing adventure! George, Matilda and Moon Dog will be best friends forever!"
+    }
+  ]
+}

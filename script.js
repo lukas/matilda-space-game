@@ -69,9 +69,15 @@ class MoonVegetableGame {
             if (this.speechSynthesis) {
                 this.speechSynthesis.cancel();
             }
+            if (this.mobileAudio) {
+                this.mobileAudio.setEnabled(false);
+            }
         } else {
             muteBtn.textContent = '🔊 Sound On';
             muteBtn.style.background = '#666';
+            if (this.mobileAudio) {
+                this.mobileAudio.setEnabled(true);
+            }
         }
     }
     
@@ -153,8 +159,9 @@ class MoonVegetableGame {
         // Create a simple pickup sound using Web Audio API
         this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
         
-        // Initialize text-to-speech
+        // Initialize text-to-speech and mobile audio system
         this.initTextToSpeech();
+        this.initMobileAudio();
     }
     
     initTextToSpeech() {
@@ -201,8 +208,27 @@ class MoonVegetableGame {
         }
     }
     
+    initMobileAudio() {
+        // Initialize mobile audio system for better mobile speech
+        if (window.MobileAudioSystem) {
+            this.mobileAudio = new window.MobileAudioSystem();
+            console.log('🎵 Mobile audio system initialized');
+        } else {
+            console.warn('⚠️ Mobile audio system not available');
+            this.mobileAudio = null;
+        }
+    }
+    
     speak(text, character = 'narrator') {
-        if (!this.speechSynthesis || this.speechMuted) return Promise.resolve();
+        if (this.speechMuted) return Promise.resolve();
+        
+        // Try mobile audio system first on mobile devices
+        if (this.mobileAudio && this.mobileAudio.isMobile) {
+            return this.mobileAudio.speak(text, character);
+        }
+        
+        // Fallback to text-to-speech
+        if (!this.speechSynthesis) return Promise.resolve();
         
         // Stop any currently speaking text
         this.speechSynthesis.cancel();
