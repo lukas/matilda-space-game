@@ -228,12 +228,20 @@ class MoonVegetableGame {
     }
     
     speak(text, character = 'narrator') {
-        if (this.speechMuted) return Promise.resolve();
+        console.log(`🎮 Game speak() called - muted: ${this.speechMuted}, text: "${text.substring(0, 30)}..."`);
+        
+        if (this.speechMuted) {
+            console.log('🔇 Speech is muted, skipping');
+            return Promise.resolve();
+        }
         
         // Try mobile audio system first on mobile devices
         if (this.mobileAudio && this.mobileAudio.isMobile) {
+            console.log('📱 Using mobile audio system');
             return this.mobileAudio.speak(text, character);
         }
+        
+        console.log('🖥️ Using desktop text-to-speech');
         
         // Fallback to text-to-speech
         if (!this.speechSynthesis) return Promise.resolve();

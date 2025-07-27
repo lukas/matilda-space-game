@@ -93,29 +93,81 @@ class MobileAudioSystem {
         if (this.audioUnlocked) return;
         
         try {
-            // Create a silent audio to unlock the audio context
-            const silentAudio = new Audio();
-            silentAudio.src = 'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSRxx+/e';
+            console.log('🔓 Attempting to unlock audio context...');
             
-            await silentAudio.play();
+            // Method 1: Try Web Audio API unlock
+            if (window.AudioContext || window.webkitAudioContext) {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                const audioContext = new AudioContextClass();
+                
+                if (audioContext.state === 'suspended') {
+                    await audioContext.resume();
+                    console.log('🔓 AudioContext resumed');
+                }
+                
+                // Play a silent tone to unlock
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                gainNode.gain.value = 0;
+                oscillator.frequency.value = 440;
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.1);
+            }
+            
+            // Method 2: Try HTML5 Audio unlock with multiple formats
+            const formats = [
+                'data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSRxx+/e',
+                'data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAASTR4WC4yLjcuMQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAid8='
+            ];
+            
+            for (const src of formats) {
+                try {
+                    const silentAudio = new Audio();
+                    silentAudio.src = src;
+                    silentAudio.volume = 0.01; // Very quiet but not silent
+                    silentAudio.preload = 'auto';
+                    
+                    // Wait for the audio to be ready
+                    await new Promise((resolve) => {
+                        silentAudio.addEventListener('loadeddata', resolve, { once: true });
+                        silentAudio.load();
+                    });
+                    
+                    await silentAudio.play();
+                    console.log(`🔓 Audio unlocked with format: ${src.substring(0, 20)}...`);
+                    break;
+                } catch (formatError) {
+                    console.warn(`⚠️ Format failed: ${src.substring(0, 20)}...`, formatError);
+                }
+            }
+            
             this.audioUnlocked = true;
             console.log('🔓 Audio context unlocked for mobile');
         } catch (error) {
             console.warn('⚠️ Failed to unlock audio context:', error);
+            // Still mark as unlocked to prevent infinite retry
+            this.audioUnlocked = true;
         }
     }
 
     async playAudio(audioPath) {
         try {
+            console.log(`🎵 Attempting to play audio: ${audioPath}`);
+            
             // Ensure audio is unlocked
             if (!this.audioUnlocked) {
+                console.log('🔓 Audio not unlocked, attempting unlock...');
                 await this.unlockAudio();
             }
             
+            console.log(`🎵 Preloading audio: ${audioPath}`);
             const audio = await this.preloadAudio(audioPath);
             
             // Stop current audio
             if (this.currentAudio && !this.currentAudio.paused) {
+                console.log('⏹️ Stopping current audio');
                 this.currentAudio.pause();
                 this.currentAudio.currentTime = 0;
             }
@@ -123,10 +175,16 @@ class MobileAudioSystem {
             this.currentAudio = audio;
             audio.currentTime = 0;
             
+            // Set volume to ensure it's audible
+            audio.volume = 1.0;
+            
+            console.log(`🎵 Audio ready to play. Volume: ${audio.volume}, Duration: ${audio.duration}`);
+            
             return new Promise((resolve) => {
                 const handleEnd = () => {
                     audio.removeEventListener('ended', handleEnd);
                     audio.removeEventListener('error', handleError);
+                    console.log('✅ Audio playback completed');
                     resolve();
                 };
                 
@@ -140,8 +198,11 @@ class MobileAudioSystem {
                 audio.addEventListener('ended', handleEnd);
                 audio.addEventListener('error', handleError);
                 
-                audio.play().catch(error => {
-                    console.warn('⚠️ Audio play failed:', error);
+                console.log('▶️ Starting audio playback...');
+                audio.play().then(() => {
+                    console.log('✅ Audio play() succeeded');
+                }).catch(error => {
+                    console.warn('⚠️ Audio play() failed:', error);
                     resolve(); // Continue even if play fails
                 });
             });
@@ -152,20 +213,29 @@ class MobileAudioSystem {
     }
     
     async speak(text, character) {
+        console.log(`🗣️ speak() called - enabled: ${this.audioEnabled}, mobile: ${this.isMobile}, character: ${character}`);
+        console.log(`🗣️ Text: "${text.substring(0, 50)}..."`);
+        
         if (!this.audioEnabled) {
+            console.log('⚠️ Audio disabled, skipping speech');
             return Promise.resolve();
         }
         
         // Try to use audio files on mobile, fall back to text-to-speech
         if (this.isMobile && this.audioManifest) {
+            console.log('🎵 Mobile detected, looking for audio file...');
             const audioPath = await this.getAudioFile(text, character);
             if (audioPath) {
+                console.log(`🎵 Found audio file: ${audioPath}`);
                 console.log(`🎵 Playing audio: ${character} - ${text.substring(0, 30)}...`);
                 return this.playAudio(audioPath);
+            } else {
+                console.log('⚠️ No audio file found for this text');
             }
         }
         
         // Fallback to text-to-speech
+        console.log('🗣️ Falling back to text-to-speech');
         return this.fallbackToTextToSpeech(text, character);
     }
     
