@@ -1,8 +1,6 @@
 class MoonVegetableGame {
     constructor() {
-        this.score = 0;
         this.gameArea = document.getElementById('gameArea');
-        this.scoreElement = document.getElementById('score');
         this.startBtn = document.getElementById('startBtn');
         this.george = document.getElementById('george');
         this.matilda = document.getElementById('matilda');
@@ -468,7 +466,6 @@ class MoonVegetableGame {
         this.currentCookingStep = 'washing';
         this.collectedVegetables = [];
         this.vegetableElements = [];
-        this.score = 0;
         this.dialogueStep = 0;
         this.houseEntered = false;
         this.refrigeratorChecked = false;
@@ -478,16 +475,12 @@ class MoonVegetableGame {
         this.dailyActivitiesCompleted = [];
         this.gameState = 'spaceFlight';
         
-        // Reset UI
-        this.updateScore();
         console.log('Game state reset for new game');
     }
     
     startVegetableGame() {
         this.gameState = 'vegetableGarden';
         this.gameRunning = true;
-        this.score = 0;
-        this.updateScore();
         this.initVegetableGarden();
         
         // Start spawning vegetables
@@ -1125,8 +1118,6 @@ class MoonVegetableGame {
     
     collectVegetable(vegetable) {
         vegetable.classList.add('collected');
-        this.score += 10;
-        this.updateScore();
         this.playPickupSound();
         
         // Add to inventory
@@ -1357,9 +1348,6 @@ class MoonVegetableGame {
         newCurrent.style.boxShadow = '0 0 20px #ffff00';
     }
     
-    updateScore() {
-        this.scoreElement.textContent = this.score;
-    }
     
     createInventoryDisplay() {
         const inventoryDiv = document.createElement('div');

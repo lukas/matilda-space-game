@@ -19,11 +19,6 @@ h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.score {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #ffff00;
-}
 
 .game-area {
     width: 800px;
@@ -372,10 +367,6 @@ h1 {
         display: none;
     }
     
-    .score {
-        display: none;
-    }
-    
     .game-area {
         width: 800px;
         height: 600px;
@@ -457,11 +448,6 @@ h1 {
     
     h1 {
         font-size: 1.2em;
-        margin-bottom: 5px;
-    }
-    
-    .score {
-        font-size: 1em;
         margin-bottom: 5px;
     }
     
