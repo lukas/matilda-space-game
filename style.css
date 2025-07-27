@@ -395,11 +395,11 @@ h1 {
     }
     
     .game-area {
-        width: calc(100vw - 20px);
-        max-width: 400px;
-        height: calc((100vw - 20px) * 0.75);
-        max-height: 500px;
-        border-width: 2px;
+        width: 800px;
+        height: 600px;
+        transform: scale(0.45);
+        transform-origin: center;
+        border-width: 1px;
     }
     
     .character {
@@ -428,9 +428,11 @@ h1 {
 
 @media screen and (max-width: 375px) {
     .game-area {
-        width: calc(100vw - 16px);
-        height: calc((100vw - 16px) * 0.8);
-        max-height: 400px;
+        width: 800px;
+        height: 600px;
+        transform: scale(0.4);
+        transform-origin: center;
+        border-width: 1px;
     }
     
     h1 {
@@ -476,8 +478,11 @@ h1 {
     }
     
     .game-area {
-        height: calc(100vh - 120px);
-        max-height: 300px;
+        width: 800px;
+        height: 600px;
+        transform: scale(0.35);
+        transform-origin: center;
+        border-width: 1px;
     }
     
     .mobile-controls {
